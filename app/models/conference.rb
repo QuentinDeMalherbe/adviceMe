@@ -7,5 +7,5 @@ class Conference < ApplicationRecord
 
   validates :date, presence: true
   validates :status, inclusion: { in: STATUS }
-  validates :title: presence: true
+  validates :title, presence: true
 end
