@@ -1,0 +1,8 @@
+<% @vices.each do |vice| %>
+<ul>
+  <li>
+    <%= link_to vice.name, vice_path(vice) %>
+  </li>
+  <% end %>
+
+</ul>
