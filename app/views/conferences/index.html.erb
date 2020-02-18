@@ -1,0 +1,9 @@
+<div class="container">
+  <p>Confirmation de la création de la conférence</p>
+  <% @conferences.each do |conference| %>
+  <h2> <%=  conference.title %> </h2>
+  <h2> <%= conference.date %> </h2>
+  <h2> <%= conference.status %> </h2>
+  <% end %>
+</div>
+
