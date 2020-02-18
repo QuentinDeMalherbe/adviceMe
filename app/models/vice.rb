@@ -4,6 +4,7 @@ class Vice < ApplicationRecord
 
   belongs_to :user
   has_many :conferences
+  has_one_attached :photo
 
 # TODO: à decommenter Marceau 17/02
   # validates :name, presence: true
