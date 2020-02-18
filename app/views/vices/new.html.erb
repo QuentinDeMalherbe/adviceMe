@@ -1,7 +1,7 @@
 <div class="container">
   <%= simple_form_for(@vice) do |form| %>
     <%= form.input :name %>
-    <%= form.select :category, collection: Vice::CATEGORIES %>
+    <%= form.input :category, as: :select2, collection: Vice::CATEGORIES,  default: 1 %>
     <%= form.input :description %>
     <%= form.input :starting_date %>
     <%= form.input :ending_date %>
