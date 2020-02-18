@@ -1,2 +1,12 @@
-<%= @vice.name %>
-<%= @vice.category %>
+<div class="navbar">
+<p>coucou je suis une navbar</p>
+</div>
+
+<div class="container">
+  <div class="description-prestation">
+    <img src="#" alt="">
+    <h1><%= @vice.name %></h1>
+    <h2><%= @vice.category %></h2>
+    <%= link_to 'reservez ton vice', new_vice_conference_path(@vice) %>
+  </div>
+</div>
