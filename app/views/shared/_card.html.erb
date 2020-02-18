@@ -1,3 +1,5 @@
+<!-- !!!!!!!! CARTE 2 PHOTOS + CONTAINER  !!!!!!!!! -->
+
 <div class="cards">
   <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
   <div class="card" style="width: 18rem;">
@@ -20,3 +22,29 @@
 </div>
 
 
+<!-- !!!!!!!! CARTE 1 PHOTO + CONTAINER !!!!!!!!! -->
+
+
+<div class="cards">
+  <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
+  <div class="card align-items-center w-25 text-center">
+    <div>
+      <%= image_tag('balkany.jpg', class: 'avatar-xl m-3') %>
+    </div>
+    <div class="rating d-flex w-100 justify-content-center">
+      <%= image_tag('boobsSelect.png') %>
+      <%= image_tag('boobsSelect.png') %>
+      <%= image_tag('boobsSelect.png') %>
+      <%= image_tag('boobsUnselect.png') %>
+    </div>
+    <div class="card-body p-3">
+      <h2 class="m-0"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h2>
+      <p class="card-text text-primary">
+        <% Vice.where(user == user.id).each do |vice| %>
+          <span><%= vice.category.upcase %></span>
+        <% end %>
+      </p>
+    </div>
+  </div>
+  <!-- Ajouter end helper link_to ici -->
+</div>
