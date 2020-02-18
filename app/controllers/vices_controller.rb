@@ -27,7 +27,7 @@ class VicesController < ApplicationController
 
   #a ajouter pour les methodes create et update.
   # def params_vice
-  #   params.require(:controller).permit(:name, :category, :description, :disponibility, :address, :price )
+  #   params.require(:controller).permit(:name, :category, :description, :disponibility, :address, :price, :starting_date, :ending_date )
   # end
 
 end
