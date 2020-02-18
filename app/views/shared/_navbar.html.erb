@@ -15,7 +15,9 @@
       </li>
 
       <li class="nav-item">
-        <%= link_to "Add vice", new_vice_path, class: 'nav-link btn btn-success text-white add_btn' %>
+        <button type="button" class="nav-link btn btn-success text-white add_btn" data-toggle="modal" data-target="#exampleModalCenter">
+          Ajouter vice
+        </button>
       </li>
 
       <li class="nav-item dropdown">
@@ -30,3 +32,6 @@
     </ul>
   </div>
 </nav>
+
+<!-- Modal -->
+<%= render "shared/modal" %>

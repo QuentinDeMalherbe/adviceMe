@@ -1,0 +1,51 @@
+<div  class="text-center m-4">
+  <h1>S'inscrire</h1>
+</div>
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%=  f.label :photo, "Photo", class: 'btn btn-warning'%><span id='chemin-photo'></span>
+    <%= f.input :photo, as: :file, label: false, input_html: { name:'photo', :class => 'inputfile' } %>
+
+    <div class="row">
+    <div class="col">
+      <%= f.input :first_name %>
+    </div>
+    <div class="col">
+      <%= f.input :last_name %>
+    </div>
+  </div>
+
+
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+  </div>
+
+  <div class="form-actions my-2">
+    <%= f.button :submit, "Sign up", class:'btn btn-primary w-100'%>
+    <p class="text-center m-1"><%= render "devise/shared/links" %></p>
+  </div>
+<% end %>
+
+    <script>
+      const input = document.querySelector('.inputfile');
+      const paragraph = document.querySelector('#chemin-photo');
+
+      input.onclick = function () {
+          this.value = null;
+      };
+
+      input.onchange = function () {
+          paragraph.innerText = this.value;
+      };
+    </script>

@@ -1,0 +1,18 @@
+form{
+  a{
+    color: $gray;
+  }
+}
+
+form a:hover {
+  color: $pink;
+  text-decoration: none;
+}
+
+label {
+  text-transform: uppercase;
+}
+
+.nav-pills .nav-link{
+  color: $pink;
+}
