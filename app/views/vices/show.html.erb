@@ -1,10 +1,7 @@
-<div class="navbar">
-<p>coucou je suis une navbar</p>
-</div>
-
 <div class="container">
   <div class="description-prestation">
-    <img src="#" alt="">
+    <%= cl_image_tag @vice.photo.key, height: 300, width: 285 , crop: :fill %>
+    <br>
     <h1><%= @vice.name %></h1>
     <h2><%= @vice.category %></h2>
     <%= link_to 'reservez ton vice', new_vice_conference_path(@vice) %>
