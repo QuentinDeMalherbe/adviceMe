@@ -4,7 +4,6 @@
 
 <div class="container">
   <%= simple_form_for(@vice) do |form| %>
-    <!-- TODO relié l'user_id Quentin 1702 -->
     <%= form.input :name %>
     <%= form.select :category, collection: Vice::CATEGORIES %>
     <%= form.input :description %>
