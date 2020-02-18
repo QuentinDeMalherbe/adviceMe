@@ -13,8 +13,8 @@ class VicesController < ApplicationController
   end
 
   def create
-    #TODO lié à l'user Quentin 17/02
-    @vice = Vice.new(params.vice)
+    @vice = Vice.new(params_vice)
+    @vice.user = current_user
     if @vice.save
       redirect_to @vice
     else
@@ -25,9 +25,9 @@ class VicesController < ApplicationController
 
   private
 
-  #a ajouter pour les methodes create et update.
-  # def params_vice
-  #   params.require(:controller).permit(:name, :category, :description, :disponibility, :address, :price )
-  # end
+
+  def params_vice
+     params.require(:vice).permit(:name, :category, :description, :disponibility, :address, :price )
+ end
 
 end
