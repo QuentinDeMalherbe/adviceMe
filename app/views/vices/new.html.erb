@@ -1,13 +1,29 @@
 <div class="container">
   <%= simple_form_for(@vice) do |form| %>
     <%= form.input :name %>
-    <%= form.select :category, collection: Vice::CATEGORIES %>
+    <%= form.input :category, as: :select2, collection: Vice::CATEGORIES,  default: 1 %>
     <%= form.input :description %>
     <%= form.input :starting_date %>
     <%= form.input :ending_date %>
     <%= form.input :address %>
     <%= form.input :price %>
-    <%= form.input :photo, as: :file %>
-    <%= form.button :submit %>
+
+    <%=  form.label :photo, "Photo", class: 'btn btn-primary'%>
+    <p id='chemin-photo'></p>
+    <%= form.input :photo, as: :file, label: false, input_html: { name:'photo', :class => 'inputfile' } %>
+    <script>
+      const input = document.querySelector('.inputfile');
+      const paragraph = document.querySelector('#chemin-photo');
+
+      input.onclick = function () {
+          this.value = null;
+      };
+
+      input.onchange = function () {
+          paragraph.innerText = this.value;
+      };
+    </script>
+
+    <%= form.button :submit , class:'btn btn-primary'%>
   <% end %>
 </div>
