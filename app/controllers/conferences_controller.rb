@@ -5,7 +5,7 @@ class ConferencesController < ApplicationController
   end
 
   def show
-    @conference = Conference.find(params[:vice_id])
+    @conference = Conference.find(params[:id])
   end
 
   def new

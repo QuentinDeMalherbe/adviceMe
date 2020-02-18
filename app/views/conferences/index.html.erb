@@ -1,9 +1,18 @@
+
 <div class="container">
-  <p>Confirmation de la création de la conférence</p>
-  <% @conferences.each do |conference| %>
-  <h2> <%=  conference.title %> </h2>
-  <h2> <%= conference.date %> </h2>
-  <h2> <%= conference.status %> </h2>
-  <% end %>
+  <div class="wrapper">
+    <% @conferences.each do |conference| %>
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> <%= link_to conference.title, conference_path(conference) %></h5>
+          <p class="card-text"><%= conference.date %></p>
+          <p class="card-text"><%= conference.status %></p>
+<!--           <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
+<%= console %>
