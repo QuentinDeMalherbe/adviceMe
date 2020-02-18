@@ -4,7 +4,11 @@
     <% @users.each do |user| %>
       <div class="card align-items-center w-25 text-center">
         <div>
-          <%= image_tag('balkany.jpg', class: 'avatar-xl m-3') %>
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, class: 'avatar-xl m-3'%>
+          <% else %>
+            <%= cl_image_tag("prbk2e5cvojsvcehqtll", class: 'avatar-xl m-3') %>
+          <% end %>
         </div>
         <div class="rating d-flex w-100 justify-content-center">
           <%= image_tag('boobsSelect.png') %>
