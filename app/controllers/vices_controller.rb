@@ -23,8 +23,8 @@ class VicesController < ApplicationController
   end
 
   private
-
+  
   def params_vice
-     params.require(:vice).permit(:name, :category, :description, :disponibility, :address, :price )
- end
+    params.require(:vice).permit(:name, :category, :description, :address, :price, :starting_date, :ending_date )
+  end
 end
