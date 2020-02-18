@@ -11,6 +11,12 @@ html {
 
 }
 
+.container {
+  // border: black solid 1px;
+  display: flex;
+  justify-content:space-around;
+}
+
 .mycontainer {
   width: 80vh;
 }
@@ -22,10 +28,9 @@ html {
   font-size: 24px;
 }
 
+
 .grid {
   display:grid;
   grid-template-columns:1fr 1fr 1fr;
   grid-gap: 16px;
 }
-
-
