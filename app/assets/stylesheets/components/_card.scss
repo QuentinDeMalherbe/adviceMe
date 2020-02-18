@@ -42,3 +42,29 @@
     border: 2px solid $pink;
   }
 }
+
+
+.cards-reservation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  width: 100%;
+  border-radius: 10px;
+  background-color: $white;
+  color: $black;
+}
+
+.card-reservation-information {
+  padding: 10px;
+  // align-items: start;
+  height: 80%;
+  width: 50%;
+}
+

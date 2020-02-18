@@ -1,6 +1,15 @@
-<div class="container">
-  <p>Confirmation de la création de la conférence</p>
-  <h2> <%=  @conference.title %> </h2>
-  <h2> <%= @conference.date %> </h2>
-  <h2> <%= @conference.status %> </h2>
+<div class="cards-reservation">
+  <div class="card-photo-reservation">
+    <div id="user-photo">
+      <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 300, width: 285 , crop: :fill, id: 'user_photo')%>
+    </div>
+    <div id="vice-photo">
+      <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 300, width: 285 , crop: :fill, id: 'vice_photo')%>
+    </div>
+  </div>
+  <div class="card-reservation-information">
+    <h2>Your reservation to "<%= @conference.title %>" is <strong> <%= @conference.status %> </strong></h2>
+
+    <h2> <%= @conference.date %> </h2>
+  </div>
 </div>
