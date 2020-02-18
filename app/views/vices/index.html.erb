@@ -7,8 +7,10 @@
 
     <a class="btn btn-flat" href="#"></a>
   </div>
+</div>
 
-<div class="cards">
+<div class="wrapper">
+ <!--  <p>Bonjour</p> -->
   <div class="container">
     <%= render 'shared/card' %>
     <% @vices.each do |vice| %>
@@ -18,8 +20,9 @@
       </li>
       <% end %>
     </ul>
-    <%= link_to 'deco', destroy_user_session_path, method: :delete%>
+
   </div>
+   <%= link_to 'deco', destroy_user_session_path, method: :delete%>
 </div>
 
 
