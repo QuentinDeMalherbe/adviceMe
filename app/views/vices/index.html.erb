@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>ADVIcE</h1>
 <h2>Vices</h2>
 <p>Find me in app/views/pages/index.html.erb</p>
@@ -14,5 +15,29 @@
   <% end %>
 
 </ul>
+=======
+<div class="navbar">
+<p>coucou je suis une navbar</p>
+<%= link_to 'créer son vice', new_vice_path %>
+</div>
+>>>>>>> b494d15aba5a4f4454762f30423661b094af82de
 
+<div class="barre-de-recherche-filtre">
+  <p>filtre a faire en deuxieme partie</p>
+</div>
 
+<div class="container">
+  <div class="wrapper">
+    <% @vices.each do |vice| %>
+      <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> <%= link_to vice.name, vice_path(vice) %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <!-- TODO METTRE AVATAR DE L'UTILISATEUR Quentin 1702 -->
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

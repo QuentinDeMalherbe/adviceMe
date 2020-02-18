@@ -8,6 +8,21 @@ class VicesController < ApplicationController
     @vice = Vice.find(params[:id])
   end
 
+  def new
+    @vice = Vice.new
+  end
+
+  def create
+    #TODO lié à l'user Quentin 17/02
+    @vice = Vice.new(params.vice)
+    if @vice.save
+      redirect_to @vice
+    else
+      render :new
+    end
+  end
+
+
   private
 
   #a ajouter pour les methodes create et update.
