@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+html {
+  overflow-x: hidden;
+}
+
+
+.wrapper {
+  overflow: scroll;
+  display: flex;
+  background-color: rgb(245, 245, 245);
+
+}
+
+.mycontainer {
+  width: 80vh;
+}
+
+.cards p {
+  margin: 0 auto;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 24px;
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+
