@@ -1,9 +1,23 @@
 .alert {
   position: fixed;
-  top: 25vh;
-  left: 109vh;
+  top: 101px;
   text-align: center;
-  right: 16px;
+  left: 40%;
   z-index: 1000;
-  width: 30%;
+  width: 300px;
 }
+
+@media (max-width: 900px){
+  .alert {
+    left: 34%;
+  }
+}
+
+
+
+@media (max-width: 400px){
+  .alert {
+    left: 12%;
+  }
+}
+
