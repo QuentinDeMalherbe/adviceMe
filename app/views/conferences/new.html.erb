@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container flex-column">
     <%= simple_form_for([@vice, @conference]) do |form| %>
     <%= form.input :title %>
     <%= form.input :date %>
-    <%= form.button :submit %>
+    <%= form.button :submit, class:'btn btn-primary' %>
   <% end %>
 </div>
