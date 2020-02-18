@@ -1,2 +1,18 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.cards {
+  display: flex;
+  background-color: rgb(245, 245, 245);
+  justify-content:space-around;
+  height: 350px;
+  position: static;
+}
+
+.cards p {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  font-size: 24px;
+  position: relative;
+  bottom: 60px; left: 40px;
+}
