@@ -1,4 +1,6 @@
 class ConferencesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :new
+
   def show
     @conference = Conference.find(params[:vice_id])
   end
