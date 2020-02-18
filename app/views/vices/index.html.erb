@@ -15,6 +15,11 @@
     <% @vices.each do |vice| %>
     <ul>
       <li>
+        <% if vice.photo.attached? %>
+          <%= cl_image_tag vice.photo.key, height: 300, width: 285 , crop: :fill%>
+        <% else %>
+          <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 300, width: 285 , crop: :fill) %>
+        <% end %>
         <%= link_to vice.name, vice_path(vice) %>
       </li>
       <% end %>

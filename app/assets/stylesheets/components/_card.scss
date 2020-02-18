@@ -42,3 +42,43 @@
     border: 2px solid $pink;
   }
 }
+
+
+.cards-reservation-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  // background-size: cover;
+  // background-position: center;
+  height: 50vh;
+  width: 70%;
+  border-radius: 10px;
+  background-color: $white;
+  color: $black;
+}
+
+.card-video {
+  width: 50%;
+  height: 50vh;
+}
+
+.video-loop {
+  width: 100%;
+  height: 100%;
+  // position: absolute;
+  object-fit: cover;
+  // top: 0;
+  border-radius: 10px 0 0 10px;
+}
+
+.card-reservation-information {
+  padding: 10px;
+  // align-items: start;
+  height: 80%;
+  width: 50%;
+}
+
