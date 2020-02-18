@@ -1,4 +1,5 @@
 class ConferencesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :new, :index
 
   def index
     @conferences = Conference.all

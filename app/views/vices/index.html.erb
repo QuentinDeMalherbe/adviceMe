@@ -1,7 +1,26 @@
+<<<<<<< HEAD
+<h1>ADVIcE</h1>
+<h2>Vices</h2>
+<p>Find me in app/views/pages/index.html.erb</p>
+
+<%= render 'shared/card' %>
+
+<a href="" class="btn btn-primary">Salut</a>
+
+<% @vices.each do |vice| %>
+<ul>
+  <li>
+    <%= link_to vice.name, vice_path(vice) %>
+  </li>
+  <% end %>
+
+</ul>
+=======
 <div class="navbar">
 <p>coucou je suis une navbar</p>
 <%= link_to 'créer son vice', new_vice_path %>
 </div>
+>>>>>>> b494d15aba5a4f4454762f30423661b094af82de
 
 <div class="barre-de-recherche-filtre">
   <p>filtre a faire en deuxieme partie</p>
@@ -22,3 +41,5 @@
     <% end %>
   </div>
 </div>
+
+<%= link_to 'deco', destroy_user_session_path, method: :delete%>
