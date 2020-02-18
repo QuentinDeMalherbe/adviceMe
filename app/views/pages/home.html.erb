@@ -1,0 +1,53 @@
+
+<div class="banner" style="margin-top:-10vh;background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path('prbk2e5cvojsvcehqtll.jpg')%>);">
+  <div class="container-banner">
+    <h1><strong>adVICE me</strong></h1>
+    <p>We bring VICE ideas to naughty people</p>
+    <p2>Diffuser des idées qui en valent la peine</p2>
+
+    <a class="btn btn-flat" href="#"></a>
+  </div>
+</div>
+
+<div class="wrapper d-flex justify-content-center">
+ <!--  <p>Bonjour</p> -->
+  <div class="container">
+        <div class="cards grid">
+        <% Vice.all.each do |vice| %>
+          <div class="card" style="width: 18rem;">
+            <%= image_tag('balkany.jpg' ,class: "card-image") %>
+            <div class="card-body">
+              <%= image_tag('balkany.jpg', class: 'avatar-large card-avatar') %>
+              <p class="m-0">Prénom Nom</p>
+              <div class="d-flex justify-content-between">
+                <p class="card-text text-primary">Catégorie</p>
+                <div class="rating d-flex">
+                  <%= image_tag('boobsSelect.png') %>
+                  <%= image_tag('boobsSelect.png') %>
+                  <%= image_tag('boobsSelect.png') %>
+                  <%= image_tag('boobsUnselect.png') %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        </div>
+  </div>
+</div>
+
+ <%= link_to 'deco', destroy_user_session_path, method: :delete%>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+      adVICE me
+  </div>
+</div>
+
+
