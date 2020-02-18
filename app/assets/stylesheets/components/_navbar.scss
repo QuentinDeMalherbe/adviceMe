@@ -27,3 +27,11 @@ img.navbar-brand {
   width: 65%;
 }
 
+@media (min-width: 992px){
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    position: absolute;
+    left: -35px;
+    top: 85px;
+    z-index:4;
+}
+}
