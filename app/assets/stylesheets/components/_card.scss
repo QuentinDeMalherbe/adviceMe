@@ -1,0 +1,44 @@
+.cards{
+  display:flex;
+}
+
+.card{
+  // border-radius: 20px;
+  position:relative;
+  border: 1px solid $black;
+  color: $black;
+  margin: 2%;
+  box-shadow: 0px 0px 20px #000000;
+}
+
+.card-body{
+  padding-bottom: 0;
+}
+
+.card-image{
+  object-fit:cover;
+  height: 138px;
+  // border-radius: 21px 21px 0px 0px;
+  border-bottom: 1px solid $white;
+}
+
+.rating img{
+  margin: 0 2%;
+  height:20px;
+}
+
+.card-avatar {
+    position: absolute;
+    right: 17px;
+    bottom: 28%;
+}
+
+
+.card:nth-child(2n){
+  border: 1px solid $white;
+  color: $white;
+  background: #000;
+  .card-avatar{
+    border: 2px solid $blue;
+  }
+}
