@@ -15,13 +15,16 @@ class ConferencesController < ApplicationController
   end
 
   def create
-    #TODO redigirer vers l'identification !!! Quentin 1702
     @vice = Vice.find(params[:vice_id])
     @conference = Conference.new(conference_params)
-    #TODO @conference.user_id = session a trouver dans les params !!! Quentin 1702
+    @conference.user = current_user
+    @conference.vice = @vice
+    @conference.status = "pending"
+
     if @conference.save
       redirect_to conference_path(@conference)
     else
+      raise
       render :new
     end
   end

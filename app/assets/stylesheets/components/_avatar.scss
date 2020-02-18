@@ -10,8 +10,17 @@
   border: 3px solid $pink;
   object-fit: cover;
   padding: 0;
-
 }
+
+.avatar-xl {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 3px solid $pink;
+  object-fit: cover;
+  padding: 0;
+}
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
