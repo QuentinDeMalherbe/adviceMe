@@ -1,48 +1,32 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<h1>ADVIcE</h1>
-<h2>Vices</h2>
-<p>Find me in app/views/pages/index.html.erb</p>
 
-<%= render 'shared/card' %>
+<div class="banner" style="margin-top:-10vh;background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path('prbk2e5cvojsvcehqtll.jpg')%>)";>
+  <div class="container-banner">
+    <h1><strong>adVICE me</strong></h1>
+    <p>We bring VICE ideas to naughty people</p>
+    <p2>Diffuser des idées qui en valent la peine</p2>
 
-<a href="" class="btn btn-primary">Salut</a>
+    <a class="btn btn-flat" href="#"></a>
+  </div>
 
-<% @vices.each do |vice| %>
-<ul>
-  <li>
-    <%= link_to vice.name, vice_path(vice) %>
-  </li>
-  <% end %>
-
-</ul>
-=======
-<div class="navbar">
-<p>coucou je suis une navbar</p>
-<%= link_to 'créer son vice', new_vice_path %>
-</div>
->>>>>>> b494d15aba5a4f4454762f30423661b094af82de
-
->>>>>>> 1be54a7d254ed67a4904364712f1fbbc8b239a36
-<div class="barre-de-recherche-filtre">
-  <p>filtre a faire en deuxieme partie</p>
-</div>
-
-<div class="container">
-  <div class="wrapper">
+<div class="cards">
+  <div class="container">
+    <%= render 'shared/card' %>
     <% @vices.each do |vice| %>
-      <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"> <%= link_to vice.name, vice_path(vice) %></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-          <!-- TODO METTRE AVATAR DE L'UTILISATEUR Quentin 1702 -->
-        </div>
-      </div>
-    <% end %>
+    <ul>
+      <li>
+        <%= link_to vice.name, vice_path(vice) %>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to 'deco', destroy_user_session_path, method: :delete%>
   </div>
 </div>
 
-<%= link_to 'deco', destroy_user_session_path, method: :delete%>
+
+
+
+
+
+
+
+
