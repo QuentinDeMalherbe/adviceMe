@@ -27,11 +27,30 @@ img.navbar-brand {
   width: 65%;
 }
 
+.sign_in_btn{
+  box-shadow: 7px 7px 0px $blue;
+}
+
+.add_btn {
+  box-shadow: 7px 7px 0px $blue;
+}
+
+.dropdown-item{
+  color: $gray;
+}
+
+
 @media (min-width: 992px){
 .navbar-expand-lg .navbar-nav .dropdown-menu {
-    position: absolute;
-    left: -35px;
-    top: 85px;
-    z-index:4;
+  position: absolute;
+  left: -35px;
+  top: 85px;
+  z-index:4;
+}
+
+.navbar-expand-lg .navbar-nav {
+  align-items: center;
 }
 }
+
+
