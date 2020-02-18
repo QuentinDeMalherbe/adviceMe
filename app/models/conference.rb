@@ -5,7 +5,8 @@ class Conference < ApplicationRecord
   belongs_to :user
   belongs_to :vice
 
-  validates :date, presence: true
-  validates :status, inclusion: { in: STATUS }
-  validates :title, presence: true
+# Marceau 18/02 à decommenter
+  # validates :date, presence: true
+  # validates :status, inclusion: { in: STATUS }
+  # validates :title, presence: true
 end

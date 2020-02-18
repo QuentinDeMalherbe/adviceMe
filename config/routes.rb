@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :vices, only: [:show, :new, :create ] do
     resources :conferences, only: %i[show new create], shallow: true
   end
+  get '/conferences' , to: 'conferences#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
