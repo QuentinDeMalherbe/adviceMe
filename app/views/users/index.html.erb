@@ -19,7 +19,7 @@
         <div class="card-body p-3">
           <h2 class="m-0"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h2>
           <p class="card-text text-primary">
-            <%= Vice.where(user == 1).first.category.upcase %>
+            <%= user.vices.first.category.upcase %>
           </p>
         </div>
       </div>
