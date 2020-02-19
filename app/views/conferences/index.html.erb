@@ -14,10 +14,10 @@
             <%= cl_image_tag(conference.vice.user.photo.key, class: 'avatar-large card-avatar') %>
             <!-- <p class="m-0">Prénom Nom</p> -->
             <div class="d-flex justify-content-between">
+              <h2>Your order is: <strong> <%= conference.status %></strong></h2>
               <p class="card-title"> <%= link_to conference.vice.description, conference_path(conference) %></p>
               <p class="card-text text-primary"><%= conference.vice.category %></p>
               <p class="card-text"><%= conference.date %></p>
-              <p class="card-text"><%= conference.status %></p>
             </div>
           </div>
         </div>
