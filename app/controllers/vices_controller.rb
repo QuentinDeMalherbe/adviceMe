@@ -15,7 +15,14 @@ class VicesController < ApplicationController
   end
 
   def show
-    @vice = Vice.find(params[:id])
+    @vice = Vice.geocoded.find(params[:id])
+    @markers =
+      [{
+        lat: @vice.latitude,
+        lng: @vice.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { vice: @vice }),
+        image_url: helpers.cl_image_path(@vice.user.photo.key)
+      }]
   end
 
   def new

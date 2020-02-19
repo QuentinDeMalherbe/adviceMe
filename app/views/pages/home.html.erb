@@ -12,16 +12,16 @@
           <div class="card" style="width: 18rem;">
             <%= cl_image_tag(vice.photo.key, class: "card-image") %>
             <div class="card-body">
+              <div class="rating d-flex  mb-2">
+                <%= image_tag('boobsSelect.png') %>
+                <%= image_tag('boobsSelect.png') %>
+                <%= image_tag('boobsSelect.png') %>
+                <%= image_tag('boobsUnselect.png') %>
+              </div>
               <%= cl_image_tag(vice.user.photo.key, class: 'avatar-large card-avatar') %>
-              <h3 class="m-0" style="font-size: 14px; margin-top:20%;"><%= link_to vice.name, new_vice_conference_path(vice), class: 'text-success' %></h3>
+              <h3 style="font-size: 14px;"><%= link_to vice.name, new_vice_conference_path(vice), class: 'text-success' %></h3>
               <div class="d-flex justify-content-between">
                 <p class="card-text text-primary"><%= vice.category %></p>
-                <div class="rating d-flex">
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsUnselect.png') %>
-                </div>
               </div>
             </div>
           </div>
