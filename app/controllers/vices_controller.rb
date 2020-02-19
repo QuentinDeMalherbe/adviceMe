@@ -2,7 +2,16 @@ class VicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @vices = Vice.all
+    @vices = Vice.geocoded #returns flats with coordinates
+
+    @markers = @vices.map do |vice|
+      {
+        lat: vice.latitude,
+        lng: vice.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { vice: vice }),
+        image_url: helpers.cl_image_path(vice.user.photo.key)
+      }
+    end
   end
 
   def show
