@@ -1,9 +1,7 @@
 <div class="container flex-column">
   <h1 class="my-3">Ajouter un vice</h1>
   <%= simple_form_for(Vice.new) do |form| %>
-    <%=  form.label :photo, "Photo", class: 'btn btn-warning'%>
-    <span id='chemin-photo'></span>
-    <%= form.input :photo, as: :file, label: false, input_html: { name:'photo', :class => 'inputfile' } %>
+    <%= form.input :photo, as: :file %>
 
     <div class="row">
     <div class="col">
@@ -38,19 +36,7 @@
 
 
 <!-- TO DO MELI : REFACTO -->
-<script>
-  const input = document.querySelector('.inputfile');
-  const paragraph = document.querySelector('#chemin-photo');
 
-  input.onclick = function () {
-      this.value = null;
-  };
-
-  input.onchange = function () {
-      paragraph.innerText = this.value;
-  };
-
-</script>
 
 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>

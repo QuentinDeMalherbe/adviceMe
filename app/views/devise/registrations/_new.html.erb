@@ -5,9 +5,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%=  f.label :photo, "Photo", class: 'btn btn-warning'%><span id='chemin-photo'></span>
-    <%= f.input :photo, as: :file, label: false, input_html: { name:'photo', :class => 'inputfile' } %>
 
+    <%= f.input :photo, as: :file %>
     <div class="row">
     <div class="col">
       <%= f.input :first_name %>
@@ -37,15 +36,4 @@
   </div>
 <% end %>
 
-    <script>
-      const input = document.querySelector('.inputfile');
-      const paragraph = document.querySelector('#chemin-photo');
 
-      input.onclick = function () {
-          this.value = null;
-      };
-
-      input.onchange = function () {
-          paragraph.innerText = this.value;
-      };
-    </script>
