@@ -15,12 +15,12 @@
         <div class="cards grid">
         <% Vice.all.each do |vice| %>
           <div class="card" style="width: 18rem;">
-            <%= image_tag('balkany.jpg' ,class: "card-image") %>
+            <%= cl_image_tag(vice.photo.key ,class: "card-image") %>
             <div class="card-body">
-              <%= image_tag('balkany.jpg', class: 'avatar-large card-avatar') %>
-              <p class="m-0">Prénom Nom</p>
+              <%= cl_image_tag(vice.user.photo.key, class: 'avatar-large card-avatar') %>
+              <p class="m-0"><%= link_to vice.name, new_vice_conference_path(vice) %></p>
               <div class="d-flex justify-content-between">
-                <p class="card-text text-primary">Catégorie</p>
+                <p class="card-text text-primary"><%= vice.category %></p>
                 <div class="rating d-flex">
                   <%= image_tag('boobsSelect.png') %>
                   <%= image_tag('boobsSelect.png') %>

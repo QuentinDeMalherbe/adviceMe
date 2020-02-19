@@ -1,37 +1,29 @@
 
 <div class="container">
-  <div class="wrapper">
-    <%  if @conferences.nil? %>
-      <h1>Vous n'avez pas de conférences de réservées</h1>
-      <%= link_to 'retour au menu', vices_index_path %>
-    <%  else %>
-      <% @conferences.each do |conference| %>
+  <%  if @conferences.nil? %>
+    <h1>Vous n'avez pas de conférences de réservées</h1>
+    <%= link_to 'retour au menu', vices_index_path %>
+  <%  else %>
+    <% @conferences.each do |conference| %>
 
-        <div class="cards">
-          <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
-          <div class="card" style="width: 18rem;">
-            <%= image_tag('balkany.jpg' ,class: "card-image") %>
-            <div class="card-body">
-              <%= image_tag('balkany.jpg', class: 'avatar-large card-avatar') %>
-              <p class="m-0">Prénom Nom</p>
-              <div class="d-flex justify-content-between">
-                <p class="card-text text-primary">Catégorie</p>
-                <h5 class="card-title"> <%= link_to conference.title, conference_path(conference) %></h5>
-                <p class="card-text"><%= conference.date %></p>
-                <p class="card-text"><%= conference.status %></p>
-                <div class="rating d-flex">
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsUnselect.png') %>
-                </div>
-                </div>
+      <div class="w-75">
+        <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
+        <div class="card w-100">
+          <%= cl_image_tag(conference.vice.photo.key ,class: "card-image") %>
+          <div class="card-body">
+            <%= cl_image_tag(conference.vice.user.photo.key, class: 'avatar-large card-avatar') %>
+            <!-- <p class="m-0">Prénom Nom</p> -->
+            <div class="d-flex justify-content-between">
+              <p class="card-title"> <%= link_to conference.title, conference_path(conference) %></p>
+              <p class="card-text text-primary"><%= conference.vice.category %></p>
+              <p class="card-text"><%= conference.date %></p>
+              <p class="card-text"><%= conference.status %></p>
             </div>
           </div>
-          <!-- Ajouter end helper link_to ici -->
         </div>
+        <!-- Ajouter end helper link_to ici -->
+      </div>
 
-      <% end %>
     <% end %>
-  </div>
+  <% end %>
 </div>

@@ -9,5 +9,7 @@
     <p> <%= @conference.date %> </p>
     <p><%= @conference.vice.description %></p>
     <p>Reservation status: <strong> <%= @conference.status %> </strong></p>
+    <%= link_to 'Retour aux vices', vices_index_path %>
   </div>
 </div>
+
