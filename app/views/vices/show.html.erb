@@ -1,6 +1,10 @@
 <div class="container">
   <div class="description-prestation">
-    <%= cl_image_tag @vice.photo.key, height: 300, width: 285 , crop: :fill %>
+  <% if @vice.photo.attached? %>
+    <%= cl_image_tag @vice.photo.key, height: 300, width: 285 , crop: :fill%>
+  <% else %>
+    <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 300, width: 285 , crop: :fill) %>
+  <% end %>
     <br>
     <h1><%= @vice.name %></h1>
     <h2><%= @vice.category %></h2>
