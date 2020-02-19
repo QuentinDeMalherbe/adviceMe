@@ -58,7 +58,7 @@ vice7.photo.attach(io: File.open("app/assets/images/emploifictif.jpg"), filename
 vice7.save!
 vice8 = Vice.new(name: 'espionnage politique & gorge profonde', category: 'politic bastards', description:'témoignage du Watergate', price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
 vice8.photo.attach(io: File.open("app/assets/images/watergate.jpg"), filename: 'watergate.jpg', content_type: 'image/jpg')
-vice18.save!
+vice8.save!
 # Vice.create!(name: 'mentir pour déclencher une guerre mondiale', category: 'politic bastards', description:'vous cherchez un prétexte pour déclencher une guerre mondiale ? ', price: '50 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 2);
 # Vice.create!(name: 'sex tape', category: 'scandale sexuel', description:'petit 5 à 7 filmé par MediaPart', price: '12 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 3);
 # Vice.create!(name: 'peignoir & femme de ménage', category: 'scandale sexuel', description:"tomber le peignoir pr accueillir la femme de ménage de l'hotel", price: '20 000', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
