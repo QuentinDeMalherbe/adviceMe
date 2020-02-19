@@ -2,7 +2,7 @@
   <h1>Tous nos hommes véreux</h1>
   <div class="cards">
     <% @users.each do |user| %>
-      <div class="card align-items-center w-25 text-center">
+      <div class="card align-items-center text-center">
         <div>
           <% if user.photo.attached? %>
             <%= cl_image_tag user.photo.key, class: 'avatar-xl m-3'%>
