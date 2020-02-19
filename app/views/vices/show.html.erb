@@ -1,14 +1,30 @@
-<div class="container">
-  <div class="description-prestation">
+<div>
+  <div class="description-prestation bg-white text-dark p-4 text-center" style="margin-top: -2%;margin-left: 5%;margin-right: 45%; color: #000;">
   <% if @vice.photo.attached? %>
     <%= cl_image_tag @vice.photo.key, height: 300, width: 285 , crop: :fill%>
   <% else %>
     <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 300, width: 285 , crop: :fill) %>
   <% end %>
     <br>
-    <h1><%= @vice.name %></h1>
+    <h1 class="text-success"><%= @vice.name %></h1>
     <h2><%= @vice.category %></h2>
-    <%= link_to 'reservez ton vice', new_vice_conference_path(@vice) %>
-  </div>
+    <p><%= @vice.description %></p>
+    <p><%= @vice.address %></p>
+    <p><%= @vice.price %> €</p>
+    <%= link_to 'reservez ton vice', new_vice_conference_path(@vice), class: 'btn btn-primary w-50' %>
+
 </div>
 
+<div
+    id="map"
+    class="m-0 ml-3"
+    style="width: 40%;
+    height: 100vh;
+    right: 0px;
+    top:20px;
+    position:fixed;
+    float:right;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>

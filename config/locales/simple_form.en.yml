@@ -17,6 +17,8 @@ en:
         description: 'Description'
         address: 'Adresse'
         price: '15€'
+        starting_date: 'Du :'
+        ending_date: 'Au :'
     labels:
       defaults:
         password: 'Mot de passe'

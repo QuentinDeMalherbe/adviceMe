@@ -6,7 +6,7 @@
   <%  else %>
     <% @conferences.each do |conference| %>
 
-      <div class="w-75">
+      <div class="w-75 m-1">
         <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
         <div class="card w-100">
           <%= cl_image_tag(conference.vice.photo.key ,class: "card-image") %>
