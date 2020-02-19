@@ -32,7 +32,7 @@ class ConferencesController < ApplicationController
   private
 
   def conference_params
-    params.require(:conference).permit(:title, :date, :status)
+    params.require(:conference).permit( :date, :status)
   end
 
 end
