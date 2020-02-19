@@ -1,10 +1,10 @@
-<div class="banner text-left" style="margin-top:-15%; height:110vh; background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= cl_image_path('Vice_bottles_xjklyj')%>); background-size: cover;">
-  <h2 class="text-white ml-5" style="margin-top: 25%;">We bring VICE ideas to naughty people</h2>
+<div class="banner text-left" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= cl_image_path('Vice_bottles_xjklyj')%>);">
+  <h2 class="text-white ml-5">We bring VICE ideas to naughty people</h2>
   <br><br>
 </div>
 
 <div class="justify-content-center bg-light mt-0 pb-4" style="margin-top:-14px;">
-  <h2 class="p-5" style="color:#000;">Pour les hommes (ou femmes) avides d'aventure ...</h2>
+  <h2 class="p-5" style="color:#000;">Pour les hommes (ou femmes) avides d'aventures ...</h2>
 
   <div class="container">
         <div class="cards grid">
@@ -32,29 +32,41 @@
 
 <div class="footer bg-dark">
   <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fab fa-github text-white"></i></a>
+    <a href="#"><i class="fab fa-instagram text-white"></i></a>
+    <a href="#"><i class="fab fa-facebook text-white"></i></a>
+    <a href="#"><i class="fab fa-twitter text-white"></i></a>
+    <a href="#"><i class="fab fa-linkedin text-white"></i></a>
   </div>
   <div class="footer-copyright">
-      adVICE me
+    <%= image_tag 'logo.png', class: 'navbar-brand mr-auto p-2 bd-highlight' %>
   </div>
 </div>
 
-<style>
-  nav.navbar.navbar-expand-lg.navbar-light.bg-light{
-    background: transparent!important;
-    border: none;
-  }
+<script>
 
-  .navbar-light .navbar-nav .nav-link {
-    color: rgba(255, 255, 255, 0.85);
-  }
+const navbar = document.getElementsByClassName('navbar')[0]
+navbar.classList.add('bg-transparent')
+const navlink = Array.from(document.querySelectorAll('a.nav-link')).slice(0,3)
+navlink.forEach( (element) => element.classList.add('text-white'))
 
-  .navbar-light .navbar-nav .nav-link:hover {
-    color: #ee8fe7;
-  }
 
-</style>
+window.addEventListener('scroll', changeColor = () => {
+
+  const banner = document.getElementsByClassName('banner')[0].offsetHeight - 150
+  const navbar = document.getElementsByClassName('navbar')[0]
+  const navlink = Array.from(document.querySelectorAll('a.nav-link')).slice(0,3)
+
+  if (banner > window.scrollY) {
+    navbar.classList.add('bg-transparent')
+    navbar.classList.remove('shadow')
+    navlink.forEach( (element) => element.classList.add('text-white'))
+  } else {
+    navbar.classList.remove('bg-transparent')
+    navbar.classList.add('shadow')
+    navlink.forEach( (element) => element.classList.remove('text-white'))
+  }
+});
+
+
+</script>
