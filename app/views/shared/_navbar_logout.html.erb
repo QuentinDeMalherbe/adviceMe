@@ -14,8 +14,14 @@
         <%= link_to 'Humains véreux', users_index_path, class: 'nav-link' %>
       </li>
       <li class="nav-item sign_in_btn">
-        <%= link_to "Se connecter / S'inscrire", new_user_session_path, class: 'nav-link btn btn-success text-white' %>
+        <!-- Button trigger modal -->
+        <button type="button" class="nav-link btn btn-success text-white" data-toggle="modal" data-target="#exampleModalCenter">
+          Se connecter / S'inscrire
+        </button>
       </li>
     </ul>
   </div>
 </nav>
+
+<!-- Modal -->
+<%= render "shared/modal" %>
