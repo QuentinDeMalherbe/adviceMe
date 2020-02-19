@@ -2,7 +2,7 @@ class ConferencesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :index]
 
   def index
-    @conferences = Conference.all
+    @conferences = Conference.where(user_id: current_user.id)
   end
 
   def show
