@@ -1,10 +1,10 @@
 <h1 class="p-3">réserve ton vice bébé</h1>
 <div class="d-flex justify-content-between">
   <div class="cards card-vice" style="margin-right:45%;margin-left: 5%; margin-top:2%;">
-    <% @vices.each do |vice| %>
+    <% Vice.all.each do |vice| %>
     <%= link_to vice_path(vice.id) do%>
       <div class="card m-0 h-100" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-                    url('<%= cl_image_path(vice.photo.key) %>');">
+                    url('<%= cl_image_path(vice.photo.key) %>'); background-size: cover;">
         <div>
 
         </div>
