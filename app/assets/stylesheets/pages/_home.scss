@@ -1,5 +1,18 @@
 // Specific CSS for your home-page
-html {
-  overflow-x: hidden;
+nav.navbar.navbar-expand-lg.navbar-light.bg-light{
+    border: none;
+  }
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ee8fe7;
+}
+
+.banner{
+  margin-top:-15%;
+  height:110%;
+  background-size: cover;
+  h2{
+    margin-top: 25%;
+  }
 }
 
