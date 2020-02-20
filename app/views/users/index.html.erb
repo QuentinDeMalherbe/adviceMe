@@ -2,27 +2,31 @@
   <h1>Tous nos hommes véreux</h1>
   <div class="cards">
     <% @users.each do |user| %>
-      <div class="card align-items-center text-center">
-        <div>
-          <% if user.photo.attached? %>
-            <%= cl_image_tag user.photo.key, class: 'avatar-xl m-3'%>
-          <% else %>
-            <%= cl_image_tag("prbk2e5cvojsvcehqtll", class: 'avatar-xl m-3') %>
+      <% if user.vices.any? %>
+        <div class="card align-items-center text-center">
+          <%= link_to vices_path do %>
+            <div>
+              <% if user.photo.attached? %>
+                <%= cl_image_tag user.photo.key, class: 'avatar-xl m-3'%>
+              <% else %>
+                <%= cl_image_tag("prbk2e5cvojsvcehqtll", class: 'avatar-xl m-3') %>
+              <% end %>
+            </div>
+            <div class="rating d-flex w-100 justify-content-center">
+              <%= image_tag('boobsSelect.png') %>
+              <%= image_tag('boobsSelect.png') %>
+              <%= image_tag('boobsSelect.png') %>
+              <%= image_tag('boobsUnselect.png') %>
+            </div>
+            <div class="card-body p-3">
+              <h2 class="m-0"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h2>
+              <p class="card-text text-primary">
+                <%= Vice.where(user == 1).first.category.upcase %>
+              </p>
+            </div>
           <% end %>
         </div>
-        <div class="rating d-flex w-100 justify-content-center">
-          <%= image_tag('boobsSelect.png') %>
-          <%= image_tag('boobsSelect.png') %>
-          <%= image_tag('boobsSelect.png') %>
-          <%= image_tag('boobsUnselect.png') %>
-        </div>
-        <div class="card-body p-3">
-          <h2 class="m-0"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h2>
-          <p class="card-text text-primary">
-            <%= Vice.where(user == 1).first.category.upcase %>
-          </p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 
