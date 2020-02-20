@@ -88,8 +88,6 @@
 </div>
 </div>
 
-
-
 <div class="footer bg-dark">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github text-white"></i></a>
@@ -102,6 +100,15 @@
     <%= image_tag 'logo.png', class: 'navbar-brand mr-auto p-2 bd-highlight' %>
   </div>
 </div>
+
+<style>
+  .saturate{
+    -webkit-filter: saturate(2);
+    filter: saturate(2);
+  }
+
+</style>
+
 
 <script>
 
@@ -131,5 +138,6 @@ window.addEventListener('scroll', changeColor = () => {
   }
 });
 
-
+const bgBanner = document.querySelector('.banner.text-left')
+setInterval(function(){ bgBanner.classList.toggle('saturate'); }, 1000);
 </script>
