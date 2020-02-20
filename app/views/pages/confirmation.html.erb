@@ -12,7 +12,7 @@
         <p>Prix : <%= @conference.vice.price %> €</p>
         <p>Organisateur : <%= @conference.user.first_name %> <%= @conference.user.last_name %> </p>
         <p>Adresse : <%= @conference.vice.address %></p>
-        <p> Réservation pour le : <%= @conference.date.strftime('%A %d %B %Y') %> </p>
+        <p> Réservation pour le : <%= @conference.date %> </p>
       </div>
 
       <div>
