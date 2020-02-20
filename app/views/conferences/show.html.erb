@@ -9,7 +9,7 @@
     <p> When: <%= @conference.date %> </p>
     <div>
     <%= link_to "delete", conference_path(@conference), method: :delete, data: { confirm: "Are you sure?" } %>
-    <%= link_to 'Retour aux vices', vices_index_path %>
+    <%= link_to 'Retour aux vices', vices_path %>
     </div>
   </div>
 </div>
