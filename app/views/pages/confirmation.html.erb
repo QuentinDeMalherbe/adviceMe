@@ -11,13 +11,13 @@
       <div class="ml-5">
         <p>Prix : <%= @conference.vice.price %> €</p>
         <p>Organisateur : <%= @conference.user.first_name %> <%= @conference.user.last_name %> </p>
-        <p>Adresse : <%= @conference.vice.address %></p>
         <p> Réservation pour le : <%= @conference.date %> </p>
+        <p>Adresse : <%= @conference.vice.address %></p>
       </div>
 
       <div>
         <p><%= link_to 'Retour aux vices', vices_path, class: 'btn btn-primary w-50 mt-3' %></p>
-        <p><%= link_to "Je peux finalement pas y aller", conference_path(@conference), method: :delete, data: { confirm: "Tu es sûr(e) de pas pouvoir venir?" }, class: 'text-decoration-none text-danger' %>
+        <p><%= link_to "Je ne peux finalement pas y aller", conference_path(@conference), method: :delete, data: { confirm: "Tu es sûr(e) de pas pouvoir venir?" }, class: 'text-decoration-none text-danger' %>
   </p>
       </div>
     </div>
