@@ -16,7 +16,7 @@
       <% end %>
     </div>
     <div class="cards card-vice">
-      <% Vice.all.each do |vice| %>
+      <% @vices.all.each do |vice| %>
         <%= link_to vice_path(vice.id) do%>
           <div class="card m-0 h-100" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                       url('<%= cl_image_path(vice.photo.key) %>'); background-size: cover;">
