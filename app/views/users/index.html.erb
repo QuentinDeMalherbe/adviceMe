@@ -21,13 +21,20 @@
             <div class="card-body p-3">
               <h2 class="m-0"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h2>
               <p class="card-text text-primary">
-                <%= Vice.where(user == 1).first.category.upcase %>
+                <% user.vices.each do |vice|%>
+                <%= vice.category.upcase %>
+                <% end %>
               </p>
             </div>
           <% end %>
         </div>
       <% end %>
     <% end %>
+  </div>
+  <br>
+  <div class="text-center font-weight-bold">
+    <%= link_to_prev_page @users, '<< Previous Page' %>
+    <%= link_to_next_page @users, 'Next Page >>' %>
   </div>
 </div>
 

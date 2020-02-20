@@ -3,14 +3,13 @@ class VicesController < ApplicationController
 
   def index
 
-    @vices = Vice.geocoded
+    @vices = Vice.geocoded.page(params[:page])
       if params[:query].present?
         @vices = Vice.geocoded.global_search(params[:query])
       end
       if params[:name_query].present?
         @vices = Vice.geocoded.global_search(params[:name_query])
       end
-
 
     @markers = @vices.map do |vice|
       {
@@ -46,6 +45,13 @@ class VicesController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @vice = Vice.find(params[:id])
+    @vice.destroy
+    redirect_to user_path
+  end
+
 
   private
 
