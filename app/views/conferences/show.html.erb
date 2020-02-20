@@ -4,12 +4,13 @@
   loop: true, autoplay: true, poster: false, class: 'video-loop')%>
   </div>
   <div class="card-reservation-information">
-    <h2><%= @conference.vice.description %></h2>
+    <h2>Your order is: <strong> <%=@conference.status%></strong></h2>
     <h2> <strong><%= @conference.vice.price %> €</strong></h2>
-    <p> <%= @conference.date %> </p>
-    <p><%= @conference.vice.description %></p>
-    <p>Reservation status: <strong> <%= @conference.status %> </strong></p>
+    <p> When: <%= @conference.date %> </p>
+    <div>
+    <%= link_to "delete", conference_path(@conference), method: :delete, data: { confirm: "Are you sure?" } %>
     <%= link_to 'Retour aux vices', vices_index_path %>
+    </div>
   </div>
 </div>
 
