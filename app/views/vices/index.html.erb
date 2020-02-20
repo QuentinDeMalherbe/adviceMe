@@ -20,7 +20,7 @@
         <%= link_to vice_path(vice.id) do%>
           <div class="card m-0 h-100" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
                       url('<%= cl_image_path(vice.photo.key) %>'); background-size: cover;">
-            <div class="card-body p-3 text-left d-flex">
+            <div class="card-body p-3 pb-0 text-left d-flex">
               <div class="mr-3">
                 <%= cl_image_tag(vice.user.photo.key, class: 'avatar') %>
               </div>

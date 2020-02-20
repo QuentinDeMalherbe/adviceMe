@@ -10,9 +10,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
 
 <script type="text/javascript">
-  $(function() {
-    $("#date").datepicker({ dateFormat: "dd-mm-yy" }).val()
-  });
+  $( function() {
+    $( "#date" ).datepicker({ minDate: new Date(document.querySelector('#start').innerText), maxDate: new Date(document.querySelector('#end').innerText) });
+  } );
 </script>
 
 <style>

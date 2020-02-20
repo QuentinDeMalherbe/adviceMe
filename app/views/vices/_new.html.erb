@@ -4,7 +4,9 @@
     <%= form.input :photo, as: :file %>
 
   <div class="row">
+    <div class="col">
       <%= form.input :name %>
+    </div>
   </div>
   <div class="row">
     <div class="col">
@@ -16,14 +18,14 @@
     </div>
     <div class="row">
       <div class="col">
-        <%= form.input :starting_date, :as => :string, :input_html => { :id => 'startdate' } %>
+        <%= form.input :starting_date, :as => :string, :input_html => { :id => 'startdate', autocomplete: 'off' } %>
       </div>
       <div class="col">
-        <%= form.input :ending_date, :as => :string, :input_html => { :id => 'enddate' } %>
+        <%= form.input :ending_date, :as => :string, :input_html => { :id => 'enddate', autocomplete: 'off' } %>
       </div>
     </div>
 
-    <%= form.input :address %>
+    <%= form.input :address, input_html: { autocomplete: 'off' } %>
     <%= form.input :description %>
 
 
@@ -34,7 +36,6 @@
 
 
 <!-- TO DO MELI : REFACTO -->
-
 
 <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
