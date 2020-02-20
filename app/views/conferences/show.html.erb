@@ -1,16 +1,26 @@
-<div class="cards-reservation-wrapper">
-  <div class="card-video">
-    <%= cl_video_tag("video_g8emmz", width: 2500, crop: :crop,
-  loop: true, autoplay: true, poster: false, class: 'video-loop')%>
-  </div>
-  <div class="card-reservation-information">
-    <h2>Your order is: <strong> <%=@conference.status%></strong></h2>
-    <h2> <strong><%= @conference.vice.price %> €</strong></h2>
-    <p> When: <%= @conference.date %> </p>
-    <div>
-    <%= link_to "delete", conference_path(@conference), method: :delete, data: { confirm: "Are you sure?" } %>
-    <%= link_to 'Retour aux vices', vices_path %>
+<div class="bg-light">
+  <h2 class="text-center mb-3">Ta réservation a bien été prise en compte ... 😏</h2>
+
+  <div class="cards-reservation-wrapper mt-5">
+    <div class="card-video">
+      <%= cl_video_tag("video_g8emmz", width: 2500, crop: :crop,
+    loop: true, autoplay: true, poster: false, class: 'video-loop')%>
+    </div>
+    <div class="card-reservation-information">
+      <h2> <strong><%= @conference.vice.price %> €</strong></h2>
+      <p> When: <%= @conference.date %> </p>
+      <div>
+        <p><%= link_to 'Retour aux vices', vices_path, class: 'btn btn-primary' %></p>
+        <p><%= link_to "Je peux finalement pas y aller", conference_path(@conference), method: :delete, data: { confirm: "Tu es sûr(e) de pas pouvoir venir?" }, class: 'text-decoration-none text-danger' %>
+  </p>
+      </div>
     </div>
   </div>
 </div>
 
+
+
+
+<style type="text/css">
+  h2{font-weight: normal;}
+</style>

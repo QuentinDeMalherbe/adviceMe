@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-xl navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <%= link_to home_path do %>
-    <%= image_tag 'logo.png', class: 'navbar-brand mr-auto p-2 bd-highlight' %>
+    <%= image_tag 'logo.png', class: 'navbar-brand mr-auto bd-highlight' %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse justify-content-end" id="navbarText">
-    <ul class="navbar-nav ">
+  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarText">
+    <ul class="navbar-nav">
       <li class="nav-item">
         <%= link_to 'Liste des Vices', vices_path, class: 'nav-link' %>
       </li>
@@ -15,7 +15,7 @@
       </li>
 
       <li class="nav-item">
-        <%= link_to 'My Dashboard', user_path(current_user), class: 'nav-link' %>
+        <%= link_to 'Mon activité', user_path(current_user), class: 'nav-link' %>
       </li>
 
       <li class="nav-item">
