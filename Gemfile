@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'select2_simple_form', github: 'lndl/select2_simple_form', tag: '0.7.3'
+gem 'pg_search', '~> 2.3.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
