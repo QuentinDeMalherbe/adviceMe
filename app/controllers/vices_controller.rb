@@ -9,6 +9,14 @@ class VicesController < ApplicationController
       @vices = Vice.geocoded
     end
 
+    #ajout par MTA
+    if params[:name_query].present?
+      sql_query = "name ILIKE :query OR user ILIKE :query OR address ILIKE :query"
+      @vices = Vice.geocoded.where(sql_query, query: "%#{params[:name_query]}%")
+    else
+      @vices = Vice.geocoded
+    end
+
 
     if params[:query].present?
       sql_query = " \
@@ -19,6 +27,20 @@ class VicesController < ApplicationController
         OR users.last_name @@ :query \
       "
       @vices = Vice.geocoded.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @vices = Vice.geocoded
+    end
+
+    #ajout par MTA
+    if params[:name_query].present?
+      sql_query = " \
+        vices.name @@ :name_query \
+        OR vices.category @@ :name_query \
+        OR vices.address @@ :name_query \
+        OR users.first_name @@ :name_query \
+        OR users.last_name @@ :name_query \
+      "
+      @vices = Vice.geocoded.joins(:user).where(sql_query, query: "%#{params[:name_query]}%")
     else
       @vices = Vice.geocoded
     end
