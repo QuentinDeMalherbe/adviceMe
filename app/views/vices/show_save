@@ -1,0 +1,52 @@
+<div class="d-flex align-items-stretch justify-content-start bg-image">
+  <div class="mt-5 p-3" style="z-index: 2; width: 60%;position: relative; margin-left: 15%;">
+    <div class="description-prestation bg-white text-dark m-5 shadow-lg">
+      <div class="d-flex align-items-end">
+        <div class="p-4">
+          <% if @vice.photo.attached? %>
+            <%= cl_image_tag @vice.photo.key, height: 280, width: 265 , crop: :fill%>
+          <% else %>
+            <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 280, width: 265 , crop: :fill) %>
+          <% end %>
+          <p class='btn btn-success text-white text-center' style="font-size:25px;position: absolute; right: 63px;width:200px;"><span style="font-weight: lighter;font-size: 20px;">Vice à </span> <%= @vice.price %> €</p>
+        </div>
+        <div class="p-3 pt-2">
+          <p class=" text-light text-center w-50" style="font-size: 12px;background: black;">Du <%= @vice.starting_date %> au <%= @vice.ending_date %></p>
+          <p class="text-info m-0" style="line-height: 30px;font-weight: bold;"><%= @vice.name.upcase %></p>
+          <p class="" style="font-size: 14px;">Catégorie: <strong class="text-primary"><%= @vice.category %></strong></h6>
+          <p class="pr-2" style="font-size: 14px;">Description: <br><em><%= @vice.description.capitalize %></em></p>
+        </div>
+      </div>
+        <%= link_to 'Réserver le vice', new_vice_conference_path(@vice), {class: 'btn btn-primary w-100 text-white py-4'} %>
+
+    </div>
+
+
+  </div>
+  <div class="w-50 d-flex bd-highlight" style="height:100%;position: fixed; right: 0;">
+      <div
+        id="map"
+        class="m-0"
+        style="width: 100%;
+        height: 100%;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .bg-image {
+  /* The image used */
+  background: url('<%= cl_image_path(@vice.photo.key,
+                 :transformation => {:effect => "blur:400", :background=>"black", :opacity=>40}) %>');
+  background-size: cover;
+  height: 88vh;
+}
+
+nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    border: none;
+    margin-bottom: 0;
+}
+</style>
