@@ -2,7 +2,7 @@
   <div class="w-75 p-5" style="margin-top:-10vh;">
     <h1 class="my-3">Réserve ton vice bébé</h1>
     <div class="filtre p-1">
-      <%= form_tag vices_index_path, method: :get do %>
+      <%= form_tag vices_path, method: :get do %>
       <div class="row">
         <div class="col">
           <%= text_field_tag :query,
@@ -49,3 +49,4 @@
   </div>
 </div>
 
+<%= console %>
