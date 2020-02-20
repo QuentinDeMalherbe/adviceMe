@@ -29,6 +29,13 @@ class ConferencesController < ApplicationController
     end
   end
 
+  def destroy
+    @conference = Conference.find(params[:id])
+    @conference.destroy
+    redirect_to vices_index_path
+
+  end
+
   private
 
   def conference_params
