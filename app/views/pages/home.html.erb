@@ -49,6 +49,7 @@ const navbar = document.getElementsByClassName('navbar')[0]
 navbar.classList.add('bg-transparent')
 const navlink = Array.from(document.querySelectorAll('a.nav-link')).slice(0,3)
 navlink.forEach( (element) => element.classList.add('text-white'))
+navbar.classList.add('border-0')
 
 
 window.addEventListener('scroll', changeColor = () => {
@@ -59,10 +60,12 @@ window.addEventListener('scroll', changeColor = () => {
 
   if (banner > window.scrollY) {
     navbar.classList.add('bg-transparent')
+    navbar.classList.add('border-0')
     navbar.classList.remove('shadow')
     navlink.forEach( (element) => element.classList.add('text-white'))
   } else {
     navbar.classList.remove('bg-transparent')
+        navbar.classList.remove('border-0')
     navbar.classList.add('shadow')
     navlink.forEach( (element) => element.classList.remove('text-white'))
   }

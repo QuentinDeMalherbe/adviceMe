@@ -4,7 +4,7 @@
     <% @users.each do |user| %>
       <% if user.vices.any? %>
         <div class="card align-items-center text-center">
-          <%= link_to vices_path do %>
+          <%= link_to vices_path(params: {name_query: user.last_name}) do %>
             <div>
               <% if user.photo.attached? %>
                 <%= cl_image_tag user.photo.key, class: 'avatar-xl m-3'%>

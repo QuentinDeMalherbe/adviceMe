@@ -82,7 +82,7 @@ GEM
     erubi (1.9.0)
     execjs (2.7.0)
     ffi (1.12.2)
-    font-awesome-sass (5.6.1)
+    font-awesome-sass (5.12.0)
       sassc (>= 1.11)
     geocoder (1.6.1)
     globalid (0.4.2)
@@ -232,7 +232,7 @@ DEPENDENCIES
   cloudinary (~> 1.12.0)
   devise
   dotenv-rails
-  font-awesome-sass (~> 5.6.1)
+  font-awesome-sass (~> 5.12.0)
   geocoder
   jbuilder (~> 2.0)
   listen (~> 3.0.5)
