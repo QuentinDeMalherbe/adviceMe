@@ -18,6 +18,7 @@
   a{
     color:inherit;
   }
+  height:300px!important;
 }
 
 .card-body{
@@ -98,5 +99,9 @@
 @media(max-width: 768px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
   }
 }
