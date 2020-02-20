@@ -3,6 +3,7 @@ class Vice < ApplicationRecord
 
   belongs_to :user
   has_many :conferences
+  has_many :ratings
   has_one_attached :photo
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

@@ -59,6 +59,7 @@ vice7.save!
 vice8 = Vice.new(name: 'espionnage politique & gorge profonde', category: 'politic bastards', description:'témoignage du Watergate', price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '10 rue notre dame 33000 Bordeaux', user_id: 4);
 vice8.photo.attach(io: File.open("app/assets/images/watergate.jpg"), filename: 'watergate.jpg', content_type: 'image/jpg')
 vice8.save!
+
 # Vice.create!(name: 'mentir pour déclencher une guerre mondiale', category: 'politic bastards', description:'vous cherchez un prétexte pour déclencher une guerre mondiale ? ', price: '50 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 2);
 # Vice.create!(name: 'sex tape', category: 'scandale sexuel', description:'petit 5 à 7 filmé par MediaPart', price: '12 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 3);
 # Vice.create!(name: 'peignoir & femme de ménage', category: 'scandale sexuel', description:"tomber le peignoir pr accueillir la femme de ménage de l'hotel", price: '20 000', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
@@ -68,6 +69,14 @@ vice8.save!
 # Vice.create!(name: 'phobie administrative', category: 'détournement de fonds publics', description:'la vie avant Pass Pro Life', price: '15 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
 # Vice.create!(name: 'fraude électorale, fake news & manipulation', category: 'politic bastards', description:'Corrompre les médias, collaborer avec Cambridge Analytica... ', price: '100 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
 # Vice.create!(name: 'espionnage politique & gorge profonde', category: 'politic bastards', description:'Watergate', price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
+
+
+puts "Destroy ratings"
+Rating.destroy_all if Rails.env.development?
+
+puts "Seeding ratings"
+Rating.create!(rating: 4.0 , user_id:1 , vice_id:1);
+Rating.create!(rating: 5.0, user_id: 1, vice_id:1);
 
 
 
