@@ -2,29 +2,12 @@ class VicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    if params[:query].present?
-
-      sql_query = "name ILIKE :query OR user ILIKE :query OR address ILIKE :query"
-      @vices = Vice.geocoded.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @vices = Vice.geocoded
-    end
+    @vices = Vice.geocoded
+      if params[:query].present?
+        @vices = Vice.geocoded.global_search(params[:query])
+      end
 
 
-    if params[:query].present?
-      sql_query = " \
-        vices.name @@ :query \
-        OR vices.category @@ :query \
-        OR vices.address @@ :query \
-        OR users.first_name @@ :query \
-        OR users.last_name @@ :query \
-      "
-      @vices = Vice.geocoded.joins(:user).where(sql_query, query: "%#{params[:query]}%")
-    else
-      @vices = Vice.geocoded
-    end
-
-    # @vices = Vice.geocoded #returns flats with coordinates
     @markers = @vices.map do |vice|
       {
         lat: vice.latitude,
