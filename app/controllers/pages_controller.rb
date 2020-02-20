@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   end
 
   def confirmation
+    @conference = Conference.find(params[:conference_id])
   end
 end

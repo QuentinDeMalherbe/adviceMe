@@ -19,12 +19,11 @@ class ConferencesController < ApplicationController
     @conference = Conference.new(conference_params)
     @conference.user = current_user
     @conference.vice = @vice
-    @conference.status = "pending"
+    @conference.status = "en attente"
 
     if @conference.save
-      redirect_to conference_path(@conference)
+      redirect_to conference_confirmation_path(@conference)
     else
-      raise
       render :new
     end
   end
@@ -33,7 +32,6 @@ class ConferencesController < ApplicationController
     @conference = Conference.find(params[:id])
     @conference.destroy
     redirect_to vices_path
-
   end
 
   private
