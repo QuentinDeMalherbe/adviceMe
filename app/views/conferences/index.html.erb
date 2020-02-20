@@ -2,7 +2,7 @@
 <div class="container">
   <%  if @conferences.nil? %>
     <h1>Vous n'avez pas de conférences de réservées</h1>
-    <%= link_to 'retour au menu', vices_index_path %>
+    <%= link_to 'retour au menu', vices_path %>
   <%  else %>
     <% @conferences.each do |conference| %>
 

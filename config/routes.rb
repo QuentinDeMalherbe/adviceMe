@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   get 'users/index'
-  get 'vices/index', 'vices#index'
+ # get 'vices/index', 'vices#index'
   get 'users/show/:id', to: 'users#show', as: 'user'
   devise_for :users
-  resources :vices, only: [:show, :new, :create ] do
+  resources :vices, only: [:index,:show, :new, :create ] do
     resources :conferences, only: %i[show new create destroy], shallow: true
   end
   get '/conferences' , to: 'conferences#index'
