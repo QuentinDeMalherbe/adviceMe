@@ -10,24 +10,33 @@ puts "Seeding users"
 user1 = User.new(first_name:"D", last_name: "SK", email:"d.sk@fmi.com", password:"Nafissatou")
 user1.photo.attach(io: File.open("app/assets/images/DSK.png"), filename: 'DSK.png', content_type: 'image/png')
 user1.save!
-user2 = User.new(first_name:"père & fils", last_name: "Bush", email:"family.bush@liers.com", password:"Nafissatou")
+user2 = User.new(first_name:"père & fils", last_name: "BUSH", email:"family.bush@liers.com", password:"Nafissatou")
 user2.photo.attach(io: File.open("app/assets/images/Bush-père-et-fils.jpg"), filename: 'Bush-père-et-fils.jpg', content_type: 'image/jpg')
 user2.save!
-user3 = User.new(first_name:"Isabelle & Patrick", last_name: "Balkany", email:"isa_et_patoche.balkany@escrocs.fr", password:"Nafissatou")
+user3 = User.new(first_name:"Isa & Patoche", last_name: "BALKANY", email:"isa_et_patoche.balkany@escrocs.fr", password:"Nafissatou")
 user3.photo.attach(io: File.open("app/assets/images/Balkany.jpg"), filename: 'Balkany.jpg', content_type: 'image/jpg')
 user3.save!
-user4 = User.new(first_name:"Donald", last_name: "Trump", email:"d.trump@tower.us", password:"Nafissatou")
+user4 = User.new(first_name:"Donald", last_name: "TRUMP", email:"d.trump@tower.us", password:"Nafissatou")
 user4.photo.attach(io: File.open("app/assets/images/Trump.jpg"), filename: 'Trump.jpg', content_type: 'image/jpg')
 user4.save!
-user5 = User.new(first_name:"Richard", last_name: "Nixon", email:"deep.throat@spy.us", password:"Nafissatou")
+user5 = User.new(first_name:"Richard", last_name: "NIXON", email:"deep.throat@spy.us", password:"Nafissatou")
 user5.photo.attach(io: File.open("app/assets/images/watergate.jpg"), filename: 'watergate.jpg', content_type: 'image/jpg')
 user5.save!
-user6 = User.new(first_name:"Benjamin", last_name: "Griveaux", email:"benji.griveaux@youporn.com", password:"Nafissatou")
+user6 = User.new(first_name:"Benjamin", last_name: "GRIVEAUX", email:"benji.griveaux@youporn.com", password:"Nafissatou")
 user6.photo.attach(io: File.open("app/assets/images/Griveaux.jpg"), filename: 'Griveaux.jpg', content_type: 'image/jpg')
 user6.save!
-user7 = User.new(first_name:"François", last_name: "Fillon", email:"ff@yfff.com", password:"Nafissatou")
+user7 = User.new(first_name:"François", last_name: "FILLON", email:"ff@fff.com", password:"Nafissatou")
 user7.photo.attach(io: File.open("app/assets/images/françois_fillon.jpg"), filename: 'françois_fillon.jpg', content_type: 'image/jpg')
 user7.save!
+user8 = User.new(first_name:"Jair", last_name: "BOLSONARO", email:"j.bolsonaro@wwf.br", password:"Nafissatou")
+user8.photo.attach(io: File.open("app/assets/images/Bolsonaro.jpg"), filename: 'Bolsonaro.jpg', content_type: 'image/jpg')
+user8.save!
+user9 = User.new(first_name:"Kim", last_name: "JONG-IL", email:"kimi@panda.eu", password:"Nafissatou")
+user9.photo.attach(io: File.open("app/assets/images/KimJongIl.jpg"), filename: 'KimJongIl.jpg', content_type: 'image/jpg')
+user9.save!
+user10 = User.new(first_name:"Vladimir", last_name: "POUTINE", email:"vlad.poutou@kgb.fr", password:"Nafissatou")
+user10.photo.attach(io: File.open("app/assets/images/VladimirPoutine.jpg"), filename: 'VladimirPoutine.jpg', content_type: 'image/jpg')
+user10.save!
 
 
 puts "Destroy vices"
@@ -59,15 +68,13 @@ vice7.save!
 vice8 = Vice.new(name: 'espionnage politique & gorge profonde', category: 'politic bastards', description:'témoignage du Watergate', price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '10 rue notre dame 33000 Bordeaux', user_id: 4);
 vice8.photo.attach(io: File.open("app/assets/images/watergate.jpg"), filename: 'watergate.jpg', content_type: 'image/jpg')
 vice8.save!
-# Vice.create!(name: 'mentir pour déclencher une guerre mondiale', category: 'politic bastards', description:'vous cherchez un prétexte pour déclencher une guerre mondiale ? ', price: '50 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 2);
-# Vice.create!(name: 'sex tape', category: 'scandale sexuel', description:'petit 5 à 7 filmé par MediaPart', price: '12 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 3);
-# Vice.create!(name: 'peignoir & femme de ménage', category: 'scandale sexuel', description:"tomber le peignoir pr accueillir la femme de ménage de l'hotel", price: '20 000', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
-# Vice.create!(name: 'frause fiscale & corruption', category: 'détournement de fonds publics', description:'clientélisme, magouilles & cpie', price: '25 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 5);
-# Vice.create!(name: 'couteau dans le dos de son mentor politique', category: 'politic bastards', description:'lacher son père sprirituel politique pour son principal concurrent', price: '26 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
+vice9 = Vice.new(name: 'déforestation massive', category: 'climato-sceptiques', description:"se servir de l'Amazonie pour un super feu de la Saint Jean", price: '150 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '10 rue notre dame 33000 Bordeaux', user_id: 4);
+vice9.photo.attach(io: File.open("app/assets/images/déforestation.jpeg"), filename: 'déforestation.jpeg', content_type: 'image/jpeg')
+vice9.save!
+vice10 = Vice.new(name: 'empoisonner ses opposants politiques', category: 'politic bastards', description:"la meilleure façon de battre ses concurrents est de ne pas en avoir", price: '100 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '10 rue notre dame 33000 Bordeaux', user_id: 4);
+vice10.photo.attach(io: File.open("app/assets/images/assassinats_politiques.jpg"), filename: 'assassinats_politiques.jpg', content_type: 'image/jpg')
+vice10.save!
 
-# Vice.create!(name: 'phobie administrative', category: 'détournement de fonds publics', description:'la vie avant Pass Pro Life', price: '15 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
-# Vice.create!(name: 'fraude électorale, fake news & manipulation', category: 'politic bastards', description:'Corrompre les médias, collaborer avec Cambridge Analytica... ', price: '100 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
-# Vice.create!(name: 'espionnage politique & gorge profonde', category: 'politic bastards', description:'Watergate', price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
 
 
 
