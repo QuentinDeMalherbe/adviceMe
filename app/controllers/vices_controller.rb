@@ -3,6 +3,7 @@ class VicesController < ApplicationController
 
   def index
     if params[:query].present?
+
       sql_query = "name ILIKE :query OR user ILIKE :query OR address ILIKE :query"
       @vices = Vice.geocoded.where(sql_query, query: "%#{params[:query]}%")
     else
