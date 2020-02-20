@@ -7,6 +7,10 @@ class VicesController < ApplicationController
       if params[:query].present?
         @vices = Vice.geocoded.global_search(params[:query])
       end
+      if params[:name_query].present?
+        @vices = Vice.geocoded.global_search(params[:name_query])
+      end
+
 
     @markers = @vices.map do |vice|
       {
