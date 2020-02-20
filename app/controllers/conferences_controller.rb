@@ -33,7 +33,6 @@ class ConferencesController < ApplicationController
     @conference = Conference.find(params[:id])
     @conference.destroy
     redirect_to vices_path
-
   end
 
   private
