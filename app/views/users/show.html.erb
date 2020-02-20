@@ -1,9 +1,37 @@
-<% if @user.photo.attached? %>
-  <%= cl_image_tag @user.photo.key, height: 300, width: 285 , crop: :fill%>
-<% else %>
-  <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 300, width: 285 , crop: :fill) %>
-<% end %>
 
-<h1><%= @user.first_name %> <%= @user.last_name %></h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<div class="container text-center">
+  <ul class=" text-center nav nav-pills" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active pl-4 pr-4 pt-3 pb-3" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Mes Vices</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link pl-4 pr-4 pt-3 pb-3" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Mes Cours</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"><h1>Joie de recevoir...</h1></div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><h1>Plaisir d'offrir...</h1></div>
+  </div>
+</div>
+
+
+<div class="cards card-vice">
+      <%current_user.vices.each do |vice| %>
+        <%= link_to vice_path(vice.id) do%>
+          <div class="card m-0 h-100" style="background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+                      url('<%= cl_image_path(vice.user.photo.key) %>'); background-size: cover;">
+            <div class="card-body p-3 text-left d-flex">
+              <div class="mr-3">
+                <%= cl_image_tag(current_user.photo.key, class: 'avatar') %>
+              </div>
+              <div>
+                <h3 class="m-0"><%= vice.name %></h3>
+                <p class="card-text text-primary"><%= vice.category %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
