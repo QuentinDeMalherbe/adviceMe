@@ -3,19 +3,17 @@
   <%= simple_form_for(Vice.new) do |form| %>
     <%= form.input :photo, as: :file %>
 
-    <div class="row">
-    <div class="col">
+  <div class="row">
       <%= form.input :name %>
-    </div>
+  </div>
+  <div class="row">
     <div class="col">
       <%= form.input :category, as: :select2, collection: Vice::CATEGORIES,  default: 1 %>
     </div>
-    <div class="col-2">
+    <div class="col-5">
       <%= form.input :price, label: 'Prix' %>
     </div>
-  </div>
-
-
+    </div>
     <div class="row">
       <div class="col">
         <%= form.input :starting_date, :as => :string, :input_html => { :id => 'startdate' } %>
