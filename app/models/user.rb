@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :vices
   has_many :conferences
   has_one_attached :photo
-  # paginates_per 10
+   paginates_per 10
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

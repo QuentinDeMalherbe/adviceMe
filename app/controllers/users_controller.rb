@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     # @vice = Vice.all
-    @users = User.all.page(params[:page])
+    @users = User.page(params[:page])
     #filtrer sur les users ayant un vice
   end
 
