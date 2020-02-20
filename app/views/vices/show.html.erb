@@ -1,52 +1,52 @@
-<div class="d-flex align-items-stretch justify-content-start bg-image">
-  <div class="mt-5 p-3" style="z-index: 2; width: 60%;position: relative; margin-left: 15%;">
-    <div class="description-prestation bg-white text-dark m-5 shadow-lg">
-      <div class="d-flex align-items-end">
-        <div class="p-4">
-          <% if @vice.photo.attached? %>
-            <%= cl_image_tag @vice.photo.key, height: 280, width: 265 , crop: :fill%>
-          <% else %>
-            <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 280, width: 265 , crop: :fill) %>
-          <% end %>
-          <p class='btn btn-success text-white text-center' style="font-size:25px;position: absolute; right: 63px;width:200px;"><span style="font-weight: lighter;font-size: 20px;">Vice à </span> <%= @vice.price %> €</p>
-        </div>
-        <div class="p-3 pt-2">
-          <p class=" text-light text-center w-50" style="font-size: 12px;background: black;">Du <%= @vice.starting_date %> au <%= @vice.ending_date %></p>
-          <p class="text-info m-0" style="line-height: 30px;font-weight: bold;"><%= @vice.name.upcase %></p>
-          <p class="" style="font-size: 14px;">Catégorie: <strong class="text-primary"><%= @vice.category %></strong></h6>
-          <p class="pr-2" style="font-size: 14px;">Description: <br><em><%= @vice.description.capitalize %></em></p>
-        </div>
-      </div>
-        <%= link_to 'Réserver le vice', new_vice_conference_path(@vice), {class: 'btn btn-primary w-100 text-white py-4'} %>
+<%= link_to 'Retour aux vices', vices_path, class: 'btn btn-success ml-2 mt-4' %>
 
+<div class="d-flex justify-content-center">
+  <div class="text-dark p-5 shadow" style="z-index:5; border: 2px solid pink; background-color: #fff;">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h2 class="text-info" style="line-height: 30px;font-weight: bold;"><%= @vice.name.upcase %></h2>
+        <p>Catégorie: <strong class="text-primary"><%= @vice.category.capitalize %></strong></h6>
+      </div>
+      <p class='btn btn-success text-white'><span style="font-weight: lighter;font-size: 20px;">Vice à </span> <%= @vice.price %> €</p>
     </div>
-
-
-  </div>
-  <div class="w-50 d-flex bd-highlight" style="height:100%;position: fixed; right: 0;">
-      <div
-        id="map"
-        class="m-0"
-        style="width: 100%;
-        height: 100%;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="d-flex justify-content-between align-items-center">
+      <div style="position:relative;">
+        <% if @vice.photo.attached? %>
+          <%= cl_image_tag @vice.photo.key, height: 250, width: 235 , crop: :fill%>
+        <% else %>
+          <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 250, width: 235 , crop: :fill) %>
+        <% end %>
       </div>
+      <div class="p-3 pt-2">
+        <p class=""><strong> Description: </strong><%= @vice.description.capitalize %></p>
+        <p class=""> Ce vice se déroule: <br> Du <%= @vice.starting_date %> au <%= @vice.ending_date %></p>
+      </div>
+
+      <div style="width: 40%;background-color: black; height: 250px;">
+        <div class="w-100 h-100 shadow text-white p-2 py-4" style="">
+          <h6 class="text-center pb-3">Réservation</h6>
+          <%= render 'conferences/new' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 d-flex bd-highlight" style="height:30%;position: fixed;bottom: 0;">
+    <div
+      id="map"
+      class="m-0"
+      style="width: 100%;
+      height: 100%;
+      z-index: 0;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
 </div>
 
 <style>
-  .bg-image {
-  /* The image used */
-  background: url('<%= cl_image_path(@vice.photo.key,
-                 :transformation => {:effect => "blur:400", :background=>"black", :opacity=>40}) %>');
-  background-size: cover;
-  height: 88vh;
-}
-
-nav.navbar.navbar-expand-lg.navbar-light.bg-light {
-    border: none;
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light {
     margin-bottom: 0;
-}
+  }
 </style>
+
