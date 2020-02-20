@@ -1,4 +1,6 @@
 import mapboxgl from 'mapbox-gl';
+import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -22,10 +24,11 @@ const initMapbox = () => {
         const element = document.createElement('div');
         element.className = 'marker';
         element.style.backgroundImage = `url('${marker.image_url}')`;
-        element.style.backgroundSize = 'contain';
+        element.style.backgroundSize = 'cover';
         element.style.width = '50px';
         element.style.height = '50px';
         element.style.borderRadius = '50%';
+        element.style.border = '2px solid #5CD4D4';
 
 
         new mapboxgl.Marker(element)
@@ -35,6 +38,8 @@ const initMapbox = () => {
       });
     };
 
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken,
+                                      mapboxgl: mapboxgl }));
     fitMapToMarkers(map, markers);
     addMarkersToMap(map, markers);
 

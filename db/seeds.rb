@@ -35,28 +35,28 @@ Vice.destroy_all if Rails.env.development?
 
 puts "Seeding vices"
 
-vice1 = Vice.new(name: 'addiction aux massages de pieds', category: 'scandale sexuel', description:'passion pour la réflexologie plantaire', price: '10 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 1);
+vice1 = Vice.new(name: 'addiction aux massages de pieds', category: 'scandale sexuel', description:'passion pour la réflexologie plantaire', price: '10 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '100 rue notre dame 33000 Bordeaux', user_id: 1);
 vice1.photo.attach(io: File.open("app/assets/images/footmassage.jpg"), filename: 'footmassage.jpg', content_type: 'image/jpg')
 vice1.save!
-vice2 = Vice.new(name: 'mentir pour déclencher une guerre mondiale', category: 'politic bastards', description:'vous cherchez un prétexte pour déclencher une guerre mondiale ? ', price: '50 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 2);
+vice2 = Vice.new(name: 'mentir pour déclencher une guerre mondiale', category: 'politic bastards', description:'vous cherchez un prétexte pour déclencher une guerre mondiale ? ', price: '50 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '102 rue notre dame 33000 Bordeaux', user_id: 2);
 vice2.photo.attach(io: File.open("app/assets/images/nuclearbomb.jpg"), filename: 'nuclearbomb.jpg', content_type: 'image/jpg')
 vice2.save!
-vice3 = Vice.new(name: 'sex tape', category: 'scandale sexuel', description:'petit 5 à 7 filmé par MediaPart', price: '12 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 1);
+vice3 = Vice.new(name: 'sex tape', category: 'scandale sexuel', description:'petit 5 à 7 filmé par MediaPart', price: '12 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '103 rue notre dame 33000 Bordeaux', user_id: 1);
 vice3.photo.attach(io: File.open("app/assets/images/sextape.jpg"), filename: 'sextape.jpg', content_type: 'image/jpg')
 vice3.save!
-vice4 = Vice.new(name: 'peignoir & femme de ménage', category: 'scandale sexuel', description:"tomber le peignoir pr accueillir la femme de ménage de l'hotel", price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 1);
+vice4 = Vice.new(name: 'peignoir & femme de ménage', category: 'scandale sexuel', description:"tomber le peignoir pr accueillir la femme de ménage de l'hotel", price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '110 rue notre dame 33000 Bordeaux', user_id: 1);
 vice4.photo.attach(io: File.open("app/assets/images/peignoirexibition.jpg"), filename: 'peignoirexibition.jpg', content_type: 'image/jpg')
 vice4.save!
-vice5 = Vice.new(name: 'frause fiscale & corruption', category: 'détournement de fonds publics', description:'clientélisme, magouilles & cpie', price: '25 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 1);
+vice5 = Vice.new(name: 'frause fiscale & corruption', category: 'détournement de fonds publics', description:'clientélisme, magouilles & cpie', price: '25 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '90 rue notre dame 33000 Bordeaux', user_id: 1);
 vice5.photo.attach(io: File.open("app/assets/images/fraude_fiscale.jpg"), filename: 'fraude_fiscale.jpg', content_type: 'image/jpg')
 vice5.save!
-vice6 = Vice.new(name: 'phobie administrative', category: 'détournement de fonds publics', description:'la vie avant Pass Pro Life', price: '26 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 1);
+vice6 = Vice.new(name: 'phobie administrative', category: 'détournement de fonds publics', description:'la vie avant Pass Pro Life', price: '26 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '95 rue notre dame 33000 Bordeaux', user_id: 1);
 vice6.photo.attach(io: File.open("app/assets/images/phobie-administrative.jpg"), filename: 'phobie-administrative.jpg', content_type: 'image/jpg')
 vice6.save!
-vice7 = Vice.new(name: 'emploi fictif', category: 'détournement de fonds publics', description:'partager le travail avec les membres de sa famille', price: '15 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 1);
+vice7 = Vice.new(name: 'emploi fictif', category: 'détournement de fonds publics', description:'partager le travail avec les membres de sa famille', price: '15 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '1 cours xavier arnozan 33000 Bordeaux', user_id: 1);
 vice7.photo.attach(io: File.open("app/assets/images/emploifictif.jpg"), filename: 'emploifictif.jpg', content_type: 'image/jpg')
 vice7.save!
-vice8 = Vice.new(name: 'espionnage politique & gorge profonde', category: 'politic bastards', description:'témoignage du Watergate', price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 4);
+vice8 = Vice.new(name: 'espionnage politique & gorge profonde', category: 'politic bastards', description:'témoignage du Watergate', price: '20 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '10 rue notre dame 33000 Bordeaux', user_id: 4);
 vice8.photo.attach(io: File.open("app/assets/images/watergate.jpg"), filename: 'watergate.jpg', content_type: 'image/jpg')
 vice8.save!
 # Vice.create!(name: 'mentir pour déclencher une guerre mondiale', category: 'politic bastards', description:'vous cherchez un prétexte pour déclencher une guerre mondiale ? ', price: '50 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', user_id: 2);
