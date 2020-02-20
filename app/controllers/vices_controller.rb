@@ -2,9 +2,13 @@ class VicesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
+
     @vices = Vice.geocoded
       if params[:query].present?
         @vices = Vice.geocoded.global_search(params[:query])
+      end
+      if params[:name_query].present?
+        @vices = Vice.geocoded.global_search(params[:name_query])
       end
 
 
