@@ -7,6 +7,7 @@ class VicesController < ApplicationController
         @vices = Vice.geocoded.global_search(params[:query])
       end
 
+
     @markers = @vices.map do |vice|
       {
         lat: vice.latitude,
