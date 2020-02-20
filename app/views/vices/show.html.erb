@@ -1,7 +1,7 @@
 <%= link_to 'Retour aux vices', vices_path, class: 'btn btn-success ml-2 mt-4' %>
 
 <div class="d-flex justify-content-center">
-  <div class="text-dark p-5 shadow" style="z-index:5; border: 2px solid pink; background-color: #fff; width:65%;">
+  <div class="text-dark p-5 shadow mt-3" style="z-index:5; border: 2px solid black; background-color: #fff; width:65%;">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div>
         <h2 class="text-info" style="line-height: 30px;font-weight: bold;"><%= @vice.name.upcase %></h2>
@@ -19,7 +19,7 @@
       </div>
       <div class="p-3 pt-2">
         <p><strong> Description: </strong><%= @vice.description.capitalize %></p>
-        <p> Ce vice se déroule <br> du <%= @vice.starting_date %> au <%= @vice.ending_date %></p>
+        <p> Ce vice se déroule <br> du <%= @vice.starting_date.strftime('%d-%m-%Y') %> au <%= @vice.ending_date.strftime('%d-%m-%Y') %></p>
       </div>
 
       <div style="width: 40%;background-color: black; height: 250px;">
@@ -43,10 +43,19 @@
     </div>
   </div>
 </div>
+<span id="start" style="display: none;"><%= @vice.starting_date %></span>
+<span id="end" style="display: none;"><%= @vice.ending_date %></span>
 
 <style>
   nav.navbar.navbar-expand-lg.navbar-light.bg-light {
     margin-bottom: 0;
+  }
+
+  div#exampleModalCenter{
+    z-index: 1000!important;
+  }
+  .modal-backdrop.show{
+    z-index: 900!important;
   }
 </style>
 
