@@ -32,7 +32,7 @@ class ConferencesController < ApplicationController
   def destroy
     @conference = Conference.find(params[:id])
     @conference.destroy
-    redirect_to vices_index_path
+    redirect_to vices_path
 
   end
 
