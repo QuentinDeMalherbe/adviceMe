@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+nav.navbar.navbar-expand-lg.navbar-light.bg-light{
+    border: none;
+  }
+
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ee8fe7;
+}
+
+.navbar-light .navbar-toggler {
+background-color: rgba(248, 249, 250, 0.17);
+}
+
+.banner{
+  margin-top:-15%;
+  height:110%;
+  background-size: cover;
+  h2{
+    margin-top: 25%;
+  }
+}
+

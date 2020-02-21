@@ -2,21 +2,39 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: 50vh;
+  height: 60vh;
+  position: static;
+  border-radius: 5px
 }
+
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
+  position: relative;
+  bottom : 80px;
+  left: 40px;
+
 }
 
 .banner p {
-  font-size: 20px;
+  font-size: 24px;
+  color: white;
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  position: relative;
+  bottom: 60px; left: 40px;
+}
+
+.banner p2 {
+  font-size: 24px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  position: relative;
+  top: 280px; left: 1360px;
 }
 

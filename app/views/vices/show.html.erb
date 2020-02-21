@@ -1,9 +1,54 @@
-<div class="container">
-  <div class="description-prestation">
-    <img src="#" alt="">
-    <h1><%= @vice.name %></h1>
-    <h2><%= @vice.category %></h2>
-    <%= link_to 'reservez ton vice', new_vice_conference_path(@vice) %>
+<%= link_to 'Retour aux vices', vices_path, class: 'btn btn-success ml-2 mt-4' %>
+
+<div class="d-flex justify-content-center">
+  <div class="text-dark p-5 shadow" style="z-index:5; border: 2px solid pink; background-color: #fff; width:65%;">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <h2 class="text-info" style="line-height: 30px;font-weight: bold;"><%= @vice.name.upcase %></h2>
+        <p>Catégorie: <strong class="text-primary"><%= @vice.category.capitalize %></strong></h6>
+      </div>
+      <p class='btn btn-success text-white w-25'><span style="font-weight: lighter;font-size: 20px;">Vice à </span> <%= @vice.price %> €</p>
+    </div>
+    <div class="d-flex justify-content-between align-items-center">
+      <div style="position:relative;">
+        <% if @vice.photo.attached? %>
+          <%= cl_image_tag @vice.photo.key, height: 250, width: 235 , crop: :fill%>
+        <% else %>
+          <%= cl_image_tag("prbk2e5cvojsvcehqtll",height: 250, width: 235 , crop: :fill) %>
+        <% end %>
+      </div>
+      <div class="p-3 pt-2">
+        <p><strong> Description: </strong><%= @vice.description.capitalize %></p>
+        <p> Ce vice se déroule <br> du <%= @vice.starting_date %> au <%= @vice.ending_date %></p>
+      </div>
+
+      <div style="width: 40%;background-color: black; height: 250px;">
+        <div class="w-100 h-100 shadow text-white p-2 py-4" style="">
+          <h6 class="text-center pb-3">Réservation</h6>
+          <%= render 'conferences/new' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w-100 d-flex bd-highlight" style="height:32%;position: fixed;bottom: 0;">
+    <div
+      id="map"
+      class="m-0"
+      style="width: 100%;
+      height: 100%;
+      z-index: 0;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
 </div>
+
+<%= render 'shared/carousel' %>
+
+<style>
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    margin-bottom: 0;
+  }
+</style>
 

@@ -1,8 +1,8 @@
 class ConferencesController < ApplicationController
-  skip_before_action :authenticate_user!, only: :new, :index
+  skip_before_action :authenticate_user!, only: [:new, :index]
 
   def index
-    @conferences = Conference.all
+    @conferences = Conference.where(user_id: current_user.id)
   end
 
   def show
@@ -19,20 +19,25 @@ class ConferencesController < ApplicationController
     @conference = Conference.new(conference_params)
     @conference.user = current_user
     @conference.vice = @vice
-    @conference.status = "pending"
+    @conference.status = "en attente"
 
     if @conference.save
-      redirect_to conference_path(@conference)
+      redirect_to conference_confirmation_path(@conference)
     else
-      raise
       render :new
     end
+  end
+
+  def destroy
+    @conference = Conference.find(params[:id])
+    @conference.destroy
+    redirect_to vices_path
   end
 
   private
 
   def conference_params
-    params.require(:conference).permit(:title, :date, :status)
+    params.require(:conference).permit( :date, :status)
   end
 
 end

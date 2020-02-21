@@ -5,6 +5,40 @@ en:
     required:
       text: 'required'
       mark: '*'
+    placeholders:
+      user:
+        first_name: 'Prénom'
+        last_name: 'Nom'
+        email: 'E-mail'
+        password: 'Mot de passe'
+        password_confirmation: 'Confirmez le mot de passe'
+      vice:
+        name: 'Nom du vice'
+        description: 'Description'
+        address: 'Adresse'
+        price: '15€'
+        starting_date: 'Du :'
+        ending_date: 'Au :'
+    labels:
+      defaults:
+        password: 'Mot de passe'
+      user:
+        new:
+          email: 'Ton e-mail petit vicelard'
+          remember_me: 'Souviens-toi de moi'
+          password_confirmation: 'Confirmation de mot de passe'
+        edit:
+          email: 'Ton e-mail petit vicelard'
+      vice:
+        new:
+          name: 'Nom du vice'
+          category: 'Catégorie'
+          starting_date: 'Date de début'
+          ending_date: 'Date de fin'
+          address: 'Adresse'
+          price: 'Prix'
+          submit: 'Crée ton vice'
+
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'

@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
-    @users = User.all
+    # @vice = Vice.all
+    @users = User.all.page(params[:page])
+    #filtrer sur les users ayant un vice
   end
 
   def show

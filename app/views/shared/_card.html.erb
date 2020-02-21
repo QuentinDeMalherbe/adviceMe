@@ -1,3 +1,5 @@
+<!-- !!!!!!!! CARTE 2 PHOTOS + CONTAINER  !!!!!!!!! -->
+
 <div class="cards">
   <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
   <div class="card" style="width: 18rem;">
@@ -17,24 +19,31 @@
     </div>
   </div>
   <!-- Ajouter end helper link_to ici -->
-
-
-  <div class="card" style="width: 18rem;">
-    <%= image_tag('balkany.jpg' ,class: "card-image") %>
-    <div class="card-body">
-      <%= image_tag('balkany.jpg', class: 'avatar-large card-avatar') %>
-      <p class="m-0">Prénom Nom</p>
-      <div class="d-flex justify-content-between">
-        <p class="card-text text-primary">Catégorie</p>
-        <div class="rating d-flex">
-          <%= image_tag('boobsSelect.png') %>
-          <%= image_tag('boobsSelect.png') %>
-          <%= image_tag('boobsSelect.png') %>
-          <%= image_tag('boobsUnselect.png') %>
-        </div>
-        </div>
-    </div>
-  </div>
 </div>
 
 
+<!-- !!!!!!!! CARTE 1 PHOTO + CONTAINER !!!!!!!!! -->
+
+
+<div class="cards">
+
+  <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
+  <div class="card align-items-center text-center"  style="width: 18rem;">
+    <div>
+      <%= image_tag('balkany.jpg', class: 'avatar-xl m-3') %>
+    </div>
+    <div class="rating d-flex w-100 justify-content-center">
+      <%= image_tag('boobsSelect.png') %>
+      <%= image_tag('boobsSelect.png') %>
+      <%= image_tag('boobsSelect.png') %>
+      <%= image_tag('boobsUnselect.png') %>
+    </div>
+    <div class="card-body p-3">
+      <h2 class="m-0">Prénom Nom</h2>
+      <p class="card-text text-primary">
+        catégorie
+      </p>
+    </div>
+  </div>
+  <!-- Ajouter end helper link_to ici -->
+</div>
