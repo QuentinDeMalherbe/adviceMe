@@ -1,11 +1,11 @@
-<div class="container">
-  <h1 class="text-white">Mes conférences</h1>
-  <%  if @conferences.empty? %>
+<div class="p-5 w-100 container text-center">
+  <h1 class="text-white text-center">Plaisir d'offrir</h1>
+  <%  if Conference.where(user == current_user.id).empty? %>
     <p class="text-white">Vous n'avez pas encore réservé de conférences ...</p>
     <br>
-    <%= link_to 'Retour au menu', vices_path %>
+    <%= link_to 'Venez voir la liste de tous les vices disponibles', vices_path, class: 'btn btn-warning' %>
   <%  else %>
-    <% @conferences.each do |conference| %>
+    <% Conference.where(user == current_user.id).each do |conference| %>
       <%= link_to conference_path(conference) do %>
       <div class="container bg-white text-dark w-75 mb-4" style="padding-bottom: 7%;">
         <div class="d-flex justify-content-end" style="position: relative;">
