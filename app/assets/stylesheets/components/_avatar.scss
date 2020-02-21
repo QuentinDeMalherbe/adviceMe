@@ -21,6 +21,15 @@
   padding: 0;
 }
 
+.avatar-xxl {
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  border: 3px solid $white;
+  object-fit: cover;
+  padding: 0;
+}
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
