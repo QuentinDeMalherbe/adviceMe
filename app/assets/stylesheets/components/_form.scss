@@ -20,3 +20,22 @@ label {
 .ap-name{
   color: #000;
 }
+
+.datepicker-days {
+    color: darkgray;
+    padding: 5px;
+}
+
+td.datepicker-days:hover {
+    color: white;
+    background-color:#f890e7;
+}
+
+th.dow {
+    background-color: #5cd4d4;
+    color: #fff;
+}
+
+th.datepicker-switch {
+    color: #000;
+}

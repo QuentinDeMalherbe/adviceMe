@@ -1,7 +1,8 @@
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  object-fit:cover;
 }
 .avatar-large {
   width: 65px;
@@ -17,6 +18,15 @@
   height: 85px;
   border-radius: 50%;
   border: 3px solid $pink;
+  object-fit: cover;
+  padding: 0;
+}
+
+.avatar-xxl {
+  width: 205px;
+  height: 205px;
+  border-radius: 50%;
+  border: 3px solid $white;
   object-fit: cover;
   padding: 0;
 }

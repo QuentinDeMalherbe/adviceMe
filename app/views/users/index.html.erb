@@ -1,5 +1,5 @@
 <div class="container flex-column">
-  <h1>Tous nos hommes véreux</h1>
+  <h1>Nos têtes de gondoles</h1>
   <div class="cards">
     <% @users.each do |user| %>
       <% if user.vices.any? %>
@@ -31,10 +31,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="text-center font-weight-bold">
-    <%= link_to prev_page @users, '<< Previous Page' %>
-    <%= link_to_next_page @users, 'Next Page >>' %>
-  </div>
+
 </div>
 
 

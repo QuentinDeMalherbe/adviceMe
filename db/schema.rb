@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_19_162922) do
+ActiveRecord::Schema.define(version: 2020_02_20_204449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(version: 2020_02_19_162922) do
     t.index ["vice_id"], name: "index_conferences_on_vice_id"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.float "rating"
+    t.bigint "user_id"
+    t.bigint "vice_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_ratings_on_user_id"
+    t.index ["vice_id"], name: "index_ratings_on_vice_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -80,5 +90,7 @@ ActiveRecord::Schema.define(version: 2020_02_19_162922) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "conferences", "users"
   add_foreign_key "conferences", "vices"
+  add_foreign_key "ratings", "users"
+  add_foreign_key "ratings", "vices"
   add_foreign_key "vices", "users"
 end

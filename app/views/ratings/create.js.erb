@@ -1,0 +1,8 @@
+//constant definition
+
+function refreshForm(test) {
+  var newAverage = document.getElementById('average');
+  newAverage.innerText = test ;
+};
+
+  refreshForm('<%= @vice.ratings.average(:rating) %>');
