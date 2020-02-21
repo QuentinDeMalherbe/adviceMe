@@ -9,5 +9,3 @@ import '../plugins/init_changeboobs';
 
 initMapbox();
 initAutocomplete();
-
-

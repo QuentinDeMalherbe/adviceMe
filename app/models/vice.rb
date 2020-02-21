@@ -1,5 +1,5 @@
 class Vice < ApplicationRecord
-  CATEGORIES = ["Déviance sexuelle", "Détournement de biens publics", "Politic bastards"]
+  CATEGORIES = ["Scandale sexuel", "Détournement de biens publics", "Politic bastards", "Désastre écologique"]
 
   belongs_to :user
   has_many :conferences

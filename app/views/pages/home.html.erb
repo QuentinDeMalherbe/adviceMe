@@ -1,94 +1,92 @@
-<div class="banner text-left" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= cl_image_path('Vice_bottles_xjklyj')%>);">
+<div class="banner text-left" style="height:110vh; background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= cl_image_path('Vice_bottles_xjklyj')%>);">
   <h2 class="text-white ml-5">We bring VICE ideas to naughty people</h2>
   <br><br>
 </div>
 
 <div class="justify-content-center bg-light mt-0 pb-4" style="margin-top:-14px;">
-  <h2 class="p-5" style="color:#000;">Pour les hommes (ou femmes) avides d'aventures ...</h2>
+  <h2 class="p-5" style="color:#000;">Pour les femmes et les hommes avides d'aventures ...<p>(pas les enfants)</p></h2>
 
     <div class="container">
   <div id="carouselExampleInterval" class="carousel slide bg-light" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active" data-interval="5000">
         <div class="d-flex justify-content-around">
-          <% Vice.first(3).each do |vice| %>
-            <div class="card d-block w-33" style="width: 18rem;">
-              <%= cl_image_tag(vice.photo.key, class: "card-image w-100") %>
-              <div class="card-body">
-                <div class="rating d-flex  mb-2">
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsUnselect.png') %>
-                </div>
-                <%= cl_image_tag(vice.user.photo.key, class: 'avatar-large card-avatar') %>
-                <h3 style="font-size: 14px;"><%= link_to vice.name, new_vice_conference_path(vice), class: 'text-success' %></h3>
-                <div class="d-flex justify-content-between">
-                  <p class="card-text text-primary"><%= vice.category %></p>
-                </div>
-              </div>
+            <div class="cards card-vice ">
+              <% Vice.all.first(3).each do |vice| %>
+                <%= link_to vice_path(vice) do%>
+                  <div class="card m-0 h-100 box-shadow-none" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                              url('<%= cl_image_path(vice.photo.key) %>'); background-size: cover;">
+                    <div class="card-body p-3 pb-0 text-left d-flex">
+                      <div class="mr-3">
+                        <%= cl_image_tag(vice.user.photo.key, class: 'avatar') %>
+                      </div>
+                      <div>
+                        <h3 class="m-0"><%= vice.name %></h3>
+                        <p class="card-text text-primary"><%= vice.category %></p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
-          <% end %>
         </div>
       </div>
       <div class="carousel-item" data-interval="5000">
         <div class="d-flex justify-content-around">
-          <% Vice.all.slice(2..4).each do |vice| %>
-            <div class="card d-block w-33" style="width: 18rem;">
-              <%= cl_image_tag(vice.photo.key, class: "card-image w-100") %>
-              <div class="card-body">
-                <div class="rating d-flex  mb-2">
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsUnselect.png') %>
-                </div>
-                <%= cl_image_tag(vice.user.photo.key, class: 'avatar-large card-avatar') %>
-                <h3 style="font-size: 14px;"><%= link_to vice.name, new_vice_conference_path(vice), class: 'text-success' %></h3>
-                <div class="d-flex justify-content-between">
-                  <p class="card-text text-primary"><%= vice.category %></p>
-                </div>
-              </div>
+          <div class="cards card-vice ">
+              <% Vice.all.slice(3..5).each do |vice| %>
+                <%= link_to vice_path(vice) do%>
+                  <div class="card m-0 h-100 box-shadow-none" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                              url('<%= cl_image_path(vice.photo.key) %>'); background-size: cover;">
+                    <div class="card-body p-3 pb-0 text-left d-flex">
+                      <div class="mr-3">
+                        <%= cl_image_tag(vice.user.photo.key, class: 'avatar') %>
+                      </div>
+                      <div>
+                        <h3 class="m-0"><%= vice.name %></h3>
+                        <p class="card-text text-primary"><%= vice.category %></p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
-          <% end %>
         </div>
       </div>
       <div class="carousel-item" data-interval="5000">
          <div class="d-flex justify-content-around">
-          <% Vice.all.slice(6..7).each do |vice| %>
-            <div class="card d-block w-33" style="width: 18rem;">
-              <%= cl_image_tag(vice.photo.key, class: "card-image w-100") %>
-              <div class="card-body">
-                <div class="rating d-flex  mb-2">
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsSelect.png') %>
-                  <%= image_tag('boobsUnselect.png') %>
-                </div>
-                <%= cl_image_tag(vice.user.photo.key, class: 'avatar-large card-avatar') %>
-                <h3 style="font-size: 14px;"><%= link_to vice.name, new_vice_conference_path(vice), class: 'text-success' %></h3>
-                <div class="d-flex justify-content-between">
-                  <p class="card-text text-primary"><%= vice.category %></p>
-                </div>
-              </div>
+          <div class="cards card-vice ">
+              <% Vice.all.slice(6..8).each do |vice| %>
+                <%= link_to vice_path(vice) do%>
+                  <div class="card m-0 h-100 box-shadow-none" style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                              url('<%= cl_image_path(vice.photo.key) %>'); background-size: cover;">
+                    <div class="card-body p-3 pb-0 text-left d-flex">
+                      <div class="mr-3">
+                        <%= cl_image_tag(vice.user.photo.key, class: 'avatar') %>
+                      </div>
+                      <div>
+                        <h3 class="m-0"><%= vice.name %></h3>
+                        <p class="card-text text-primary"><%= vice.category %></p>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             </div>
-          <% end %>
         </div>
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+      <span class="sr-only">Page suivante</span>
     </a>
     <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+      <span class="sr-only">Page précédente</span>
     </a>
   </div>
 </div>
 </div>
-
-
 
 <div class="footer bg-dark">
   <div class="footer-links">
@@ -102,6 +100,15 @@
     <%= image_tag 'logo.png', class: 'navbar-brand mr-auto p-2 bd-highlight' %>
   </div>
 </div>
+
+<style>
+  .saturate{
+    -webkit-filter: saturate(2);
+    filter: saturate(2);
+  }
+
+</style>
+
 
 <script>
 
@@ -131,5 +138,6 @@ window.addEventListener('scroll', changeColor = () => {
   }
 });
 
-
+const bgBanner = document.querySelector('.banner.text-left')
+setInterval(function(){ bgBanner.classList.toggle('saturate'); }, 1000);
 </script>

@@ -9,13 +9,16 @@
 }
 
 .card{
-  // border-radius: 20px;
   width: 100%;
   position:relative;
   border: 1px solid $black;
   color: $black;
   margin: 2%;
   box-shadow: 0px 0px 20px #000000;
+  a{
+    color:inherit;
+  }
+  height:350px!important;
 }
 
 .card-body{
@@ -26,7 +29,6 @@
 .card-image{
   object-fit:cover;
   height: 138px;
-  // border-radius: 21px 21px 0px 0px;
   border-bottom: 1px solid $white;
 }
 
@@ -70,13 +72,6 @@
   }
 }
 
-.cards-reservation-wrapper {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 50vh;
-}
-
 .card-video {
   width: 50%;
   height: 50vh;
@@ -94,6 +89,10 @@
   width: 50%;
 }
 
+.box-shadow-none {
+  box-shadow: none;
+}
+
 
 @media(max-width: 992px) {
   .cards {
@@ -104,5 +103,9 @@
 @media(max-width: 768px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
   }
 }

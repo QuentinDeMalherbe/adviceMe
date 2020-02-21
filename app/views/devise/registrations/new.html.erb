@@ -1,0 +1,36 @@
+<div class="container justify-content-center p-3 px-5" style="border:3px solid white; width: 45%; margin-top:-5vh;box-shadow: -12px 12px 1px 1px #ee8fe7;">
+  <div  class="text-center m-4">
+    <h1>S'inscrire</h1>
+  </div>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <%= f.input :photo, as: :file %>
+      <div class="row">
+      <div class="col">
+        <%= f.input :first_name %>
+      </div>
+      <div class="col">
+        <%= f.input :last_name %>
+      </div>
+    </div>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+    <div class="form-actions my-2">
+      <%= f.button :submit, "Sign up", class:'btn btn-primary w-100'%>
+      <p class="text-center m-1"><%= render "devise/shared/links" %></p>
+    </div>
+  <% end %>
+</div>
+
+

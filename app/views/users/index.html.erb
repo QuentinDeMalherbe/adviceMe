@@ -1,10 +1,10 @@
 <div class="container flex-column">
-  <h1>Tous nos hommes véreux</h1>
+  <h1>Nos têtes de gondoles</h1>
   <div class="cards">
     <% @users.each do |user| %>
       <% if user.vices.any? %>
-        <div class="card align-items-center text-center">
-          <%= link_to vices_path(params: {name_query: user.last_name}) do %>
+        <div class="card align-items-center text-center h-100">
+        <%= link_to vices_path(params: {name_query: user.last_name}) do %>
             <div>
               <% if user.photo.attached? %>
                 <%= cl_image_tag user.photo.key, class: 'avatar-xl m-3'%>
@@ -19,22 +19,30 @@
               <%= image_tag('boobsUnselect.png') %>
             </div>
             <div class="card-body p-3">
-              <h2 class="m-0"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h2>
-              <p class="card-text text-primary">
-                <% user.vices.each do |vice|%>
-                <%= vice.category.upcase %>
-                <% end %>
-              </p>
+              <h2 class="m-0  text-decoration-none"><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></h2>
+              <% array = [] %>
+              <% user.vices.each do |vice|%>
+                  <% array << vice.category.upcase %>
+              <% end %>
+              <%= array.uniq.join(' ,') %>
             </div>
-          <% end %>
+        <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
-  <br>
-  <div class="text-center font-weight-bold">
-    <%= link_to_prev_page @users, '<< Previous Page' %>
-    <%= link_to_next_page @users, 'Next Page >>' %>
-  </div>
+
 </div>
 
+
+
+<style>
+  a:hover{
+    text-decoration:none;
+  }
+
+  .card:hover{
+  background-color: #5cd4d4;
+  border: 1px solid white;
+}
+</style>
