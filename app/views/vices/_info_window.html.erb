@@ -8,7 +8,7 @@
   </div>
   <div class="text-center p-2">
     <p class="m-0">Organisateur:<br><%= User.find(vice.user_id).first_name.capitalize %> <%= User.find(vice.user_id).last_name.capitalize %></p>
-    <p class="m-0">Cours dispos :</p>
+    <p class="m-0">Conférence disponible du :</p>
     <p class="m-0"><%= vice.starting_date %> - <%= vice.ending_date %></p>
   </div>
 </div>
