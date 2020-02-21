@@ -24,6 +24,7 @@
     <div class="d-flex justify-content-end align-items-center" style="position: relative;">
       <%= cl_image_tag(@conference.user.photo.key, class: 'avatar-xxl') %>
       <%= cl_image_tag(@conference.vice.photo.key, class: 'avatar-xxl', style: 'margin-left:-30px;') %>
+      <%= cl_image_tag(User.find(@conference.vice.user_id).photo.key, class: 'avatar-xxl', style: 'margin-left:-30px;') %>
     </div>
   </div>
 </div>
