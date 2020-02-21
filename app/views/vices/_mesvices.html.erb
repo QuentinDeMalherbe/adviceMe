@@ -1,5 +1,4 @@
-<div class="p-5 w-100 container text-center">
-  <h1 class="text-white text-center">Joie de recevoir</h1>
+<div class="p-3 w-100 container text-center">
   <div class="w-100 bd-highlight">
     <div
       id="map"
@@ -10,6 +9,7 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   </div>
+  <h1 class="text-white text-center">Joie de recevoir</h1>
   <div class="cards card-vice">
     <% current_user.vices.each do |vice| %>
       <%= link_to vice_path(vice.id) do%>
