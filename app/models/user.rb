@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_many :vices
   has_many :conferences
+  has_many :ratings
   has_one_attached :photo
   # paginates_per 10
 

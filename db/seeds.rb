@@ -78,6 +78,7 @@ vice7.save!
 vice8 = Vice.new(name: 'déforestation massive', category: 'climato-sceptiques', description:"se servir de l'Amazonie pour un super feu de la Saint Jean", price: '150 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '10 rue notre dame 33000 Bordeaux', user_id: 8);
 vice8.photo.attach(io: File.open("app/assets/images/déforestation.jpeg"), filename: 'déforestation.jpeg', content_type: 'image/jpeg')
 vice8.save!
+
 vice9 = Vice.new(name: 'emploi fictif', category: 'détournement de fonds publics', description:'partager le travail avec son épouse', price: '15 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '1 cours xavier arnozan 33000 Bordeaux', user_id: 9);
 vice9.photo.attach(io: File.open("app/assets/images/emploifictif.jpg"), filename: 'emploifictif.jpg', content_type: 'image/jpg')
 vice9.save!
@@ -87,9 +88,6 @@ vice10.save!
 vice11 = Vice.new(name: 'phobie administrative', category: 'détournement de fonds publics', description:'la vie avant Pass Pro Life', price: '26 000€', starting_date: '2020-02-18', ending_date:'2020-03-01', address: '95 rue notre dame 33000 Bordeaux', user_id: 11);
 vice11.photo.attach(io: File.open("app/assets/images/phobie-administrative.jpg"), filename: 'phobie-administrative.jpg', content_type: 'image/jpg')
 vice11.save!
-
-
-
 
 
 
