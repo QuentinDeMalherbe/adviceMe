@@ -47,7 +47,7 @@
                       <p class="card-text text-primary"><%= vice.category %></p>
                       <p class="card-text text-primary"><%= vice.ratings.average(:rating) %></p>
                       <div class="rating d-flex">
-                        <%= link_to image_tag('boobsUnselect.png') , vice_ratings_path(vice, rating: 1), method: :post, id: "rate_1", onclick: "changeimg(this)"%>
+                        <%= link_to image_tag('boobsUnselect.png') , vice_ratings_path(vice, rating: 1), method: :post, id: "rate_1"%>
                         <%= link_to image_tag('boobsUnselect.png') , vice_ratings_path(vice, rating: 2), method: :post, id: "rate_2" %>
                         <%= link_to image_tag('boobsUnselect.png') , vice_ratings_path(vice, rating: 3), method: :post, id: "rate_3" %>
                         <%= link_to image_tag('boobsUnselect.png') , vice_ratings_path(vice, rating: 4), method: :post, id: "rate_4" %>
