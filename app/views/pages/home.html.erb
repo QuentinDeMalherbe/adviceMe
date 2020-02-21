@@ -1,4 +1,4 @@
-<div class="banner text-left" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= cl_image_path('Vice_bottles_xjklyj')%>);">
+<div class="banner text-left" style="height:110vh; background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(<%= cl_image_path('Vice_bottles_xjklyj')%>);">
   <h2 class="text-white ml-5">We bring VICE ideas to naughty people</h2>
   <br><br>
 </div>
@@ -88,8 +88,6 @@
 </div>
 </div>
 
-
-
 <div class="footer bg-dark">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github text-white"></i></a>
@@ -102,6 +100,15 @@
     <%= image_tag 'logo.png', class: 'navbar-brand mr-auto p-2 bd-highlight' %>
   </div>
 </div>
+
+<style>
+  .saturate{
+    -webkit-filter: saturate(2);
+    filter: saturate(2);
+  }
+
+</style>
+
 
 <script>
 
@@ -131,5 +138,6 @@ window.addEventListener('scroll', changeColor = () => {
   }
 });
 
-
+const bgBanner = document.querySelector('.banner.text-left')
+setInterval(function(){ bgBanner.classList.toggle('saturate'); }, 1000);
 </script>

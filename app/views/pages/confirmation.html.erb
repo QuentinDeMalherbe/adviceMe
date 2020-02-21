@@ -1,32 +1,62 @@
-<div class="w-70">
-  <h2 class="text-center mb-3">Ta réservation a bien été prise en compte ... 😏</h2>
-
-  <div class="cards-reservation-wrapper mt-5 bg-light text-dark">
-    <div class="card-video">
-      <%= cl_video_tag("video_g8emmz", width: 2500, crop: :crop,
-    loop: true, autoplay: true, poster: false, class: 'video-loop')%>
-    </div>
-    <div class="card-reservation-information pt-3">
+<div class="container">
+  <div class="d-flex justify-content-start align-items-start m-4 bg-white text-dark">
+    <div class="m-0 p-5">
       <h2 style="text-transform: uppercase;" class="mb-4">Récapitulatif</h2>
-      <div class="ml-5">
-        <p>Prix : <%= @conference.vice.price %> €</p>
-        <p>Organisateur : <%= @conference.user.first_name %> <%= @conference.user.last_name %> </p>
-        <p>Adresse : <%= @conference.vice.address %></p>
-        <p> Réservation pour le : <%= @conference.date.strftime('%A %d %B %Y') %> </p>
-      </div>
+      <%= cl_video_tag("video_g8emmz", width: 400, height: 450,crop: :fill,
+      loop: true, autoplay: true, poster: false)%>
 
-      <div>
-        <p><%= link_to 'Retour aux vices', vices_path, class: 'btn btn-primary w-50 mt-3' %></p>
-        <p><%= link_to "Je peux finalement pas y aller", conference_path(@conference), method: :delete, data: { confirm: "Tu es sûr(e) de pas pouvoir venir?" }, class: 'text-decoration-none text-danger' %>
-  </p>
+    </div>
+    <div class="w-100">
+        <div class="p-4" style="border-left: 1px solid #f7f7f7;">
+        <div class="section">
+          <h5>Vos infos</h5>
+          <p class="m-0"><i class="fas fa-at"></i> <%= @conference.user.email %></p>
+        </div>
+        <div class="section">
+          <h5>Infos sur le cours</h5>
+          <p><i class="fas fa-user"></i> <%= @conference.user.first_name %> <%= @conference.user.last_name %> </p>
+          <p><i class="far fa-calendar-times"></i> <%= @conference.date.strftime('%d %B %Y') %> </p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= @conference.vice.address %></p>
+        </div>
+        <div style="border-top: 1px solid #d4d4d4; padding-top:20px;" class="d-flex justify-content-between">
+          <h6>Paiement</h6>
+          <p><i class="fas fa-euro-sign"></i> <%= @conference.vice.price %></p>
+        </div>
+        <div>
+          <p class="d-flex justify-content-end"><%= link_to 'Retour aux vices', vices_path, class: 'btn btn-warning w-50 mt-3' %></p>
+          <p class="d-flex justify-content-end"><%= link_to "Je ne peux finalement pas y aller", conference_path(@conference), method: :delete, data: { confirm: "Tu es sûr(e) de pas pouvoir venir?" }, class: 'text-decoration-none text-secondary', style: 'font-size:12px;' %>
+    </p>
+        </div>
       </div>
     </div>
   </div>
+
 </div>
 
 
 
-
 <style type="text/css">
-  h2{font-weight: normal;}
+  h2, h5{font-weight: normal;}
+  h6{font-family: 'Montserrat';}
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light{margin-bottom: 0;}
+
+  .section{
+    background-color: rgba(217,239,239,1);
+    padding:7%;
+    border-radius:5px;
+    margin-bottom: 3vh;
+  }
+
+  .section h5{
+    text-align:center;
+  }
+
+  .section i {
+    color:#5cd4d4;
+    padding-right:10px;
+  }
+
+  .d-flex.justify-content-start.align-items-start.m-4.bg-white.text-dark {
+    box-shadow: -9px 9px 1px #ee8fe7;
+}
 </style>
