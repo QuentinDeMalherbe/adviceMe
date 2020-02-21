@@ -8,8 +8,8 @@
     <% Conference.where(user == current_user.id).each do |conference| %>
       <%= link_to conference_path(conference) do %>
       <div class="container bg-white text-dark w-75 mb-4" style="padding-bottom: 7%;">
-        <div class="d-flex justify-content-end" style="position: relative;">
-          <div style="float: left;position: absolute;left: 2%;top:40%;">
+        <div class="d-flex justify-content-between" style="position: relative;">
+          <div style="float: left;position: absolute;top:40%;" class="text-left">
             <h2><%= conference.vice.category %></h2>
             <h1 class="w-50"><%= conference.vice.name %></h1>
           </div>
