@@ -23,7 +23,7 @@
           <p><i class="fas fa-euro-sign"></i> <%= @conference.vice.price %></p>
         </div>
         <div>
-          <p class="d-flex justify-content-end"><%= link_to 'Retour aux vices', vices_path, class: 'btn btn-warning w-50 mt-3' %></p>
+          <p class="d-flex justify-content-end"><%= link_to 'Confirmez', conferences_path, class: 'btn btn-warning w-50 mt-3' %></p>
           <p class="d-flex justify-content-end"><%= link_to "Je ne peux finalement pas y aller", conference_path(@conference), method: :delete, data: { confirm: "Tu es sûr(e) de pas pouvoir venir?" }, class: 'text-decoration-none text-secondary', style: 'font-size:12px;' %>
     </p>
         </div>
