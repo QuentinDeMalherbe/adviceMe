@@ -1,8 +1,8 @@
 class RatingsController < ApplicationController
 
   def create
-    @rating = Rating.new(rating: params[:rating], user_id: current_user.id ,vice_id: params[:vice_id])
-    @user = current_user
+    @vice = Vice.find(params[:vice_id])
+    @rating = Rating.new(rating: params[:rating], user: current_user ,vice: @vice)
     if @rating.save
       respond_to do |format|
         format.html { redirect_to user_path(current_user) }
