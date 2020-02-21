@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @vices = current_user.vices.geocoded.page(params[:page])
+    @vices = @user.vices.geocoded.page(params[:page])
       if params[:query].present?
         @vices = Vice.geocoded.page(params[:page]).global_search(params[:query])
       end
