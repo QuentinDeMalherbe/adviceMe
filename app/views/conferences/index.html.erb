@@ -1,30 +1,54 @@
-
 <div class="container">
+  <h1 class="text-white">Mes conférences</h1>
   <%  if @conferences.empty? %>
-    <h1>Vous n'avez pas de conférences de réservées</h1>
+    <h1>Vous n'avez pas encore réservé de conférences ...</h1>
     <br>
-    <%= link_to 'retour au menu', vices_path %>
+    <%= link_to 'Retour au menu', vices_path %>
   <%  else %>
     <% @conferences.each do |conference| %>
-
-      <div class="w-75 m-1">
-        <!-- Ajouter helper link_to ici vers vice_path(@vice_id) -->
-        <div class="card w-100">
-          <%= cl_image_tag(conference.vice.photo.key ,class: "card-image") %>
-          <div class="card-body">
-            <%= cl_image_tag(conference.vice.user.photo.key, class: 'avatar-large card-avatar') %>
-            <!-- <p class="m-0">Prénom Nom</p> -->
-            <div class="d-flex justify-content-between">
-              <h2>Your order is: <strong> <%= conference.status %></strong></h2>
-              <p class="card-title"> <%= link_to conference.vice.description, conference_path(conference) %></p>
-              <p class="card-text text-primary"><%= conference.vice.category %></p>
-              <p class="card-text"><%= conference.date %></p>
-            </div>
+      <%= link_to conference_path(conference) do %>
+      <div class="container bg-white text-dark w-75 mb-4" style="padding-bottom: 7%;">
+        <div class="d-flex justify-content-end" style="position: relative;">
+          <div style="float: left;position: absolute;left: 2%;top:40%;">
+            <h2><%= conference.vice.category %></h2>
+            <h1 class="w-50"><%= conference.vice.name %></h1>
+          </div>
+          <% if conference.vice.category == 'politic bastards' %>
+            <img class ='imgRand' src="https://images.unsplash.com/photo-1487687244198-8fd6524022f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")">
+          <% elsif conference.vice.category.capitalize == 'Détournement de fonds publics'%>
+            <img class ='imgRand' src="https://images.unsplash.com/photo-1459257831348-f0cdd359235f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")">
+          <% else %>
+            <img class ='imgRand' src="https://images.unsplash.com/photo-1531171421955-98c62fcd562f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=649&q=80")">
+          <% end %>
+        </div>
+        <div class="position:relative;">
+          <div class="d-flex justify-content-end align-items-center" style="position:absolute;margin-top: -8vh;left: 58%;">
+            <%= cl_image_tag(conference.user.photo.key, class: 'avatar-xl') %>
+            <%= cl_image_tag(conference.vice.photo.key, class: 'avatar-xl', style: 'margin-left:-20px;background-color: white;') %>
+            <%= cl_image_tag(User.find(conference.vice.user_id).photo.key, class: 'avatar-xl', style: 'margin-left:-20px;background-color: white;') %>
           </div>
         </div>
-        <!-- Ajouter end helper link_to ici -->
       </div>
 
+      <% end %>
     <% end %>
   <% end %>
 </div>
+
+
+
+
+<style type="text/css">
+  h2, h5{font-weight: normal;font-family: 'Montserrat';}
+  h1{line-height: 34px;color:black;text-shadow: 1px 3px 1px #091A6C;}
+  .imgRand{
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    margin: 20px;
+  }
+
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light {
+    margin-bottom: 5vh;
+}
+</style>
