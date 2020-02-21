@@ -1,0 +1,16 @@
+<div>
+  <div class="d-flex align-items-center text-left text-white p-3" style="background:black;">
+    <%= cl_image_tag(vice.photo.key, class: "avatar") %>
+    <div class="text-left w-75 ml-3">
+      <h6 class="m-0 text-left"><%= vice.name %></h6>
+      <p class="m-0 text-primary"><%= vice.category %></p>
+    </div>
+  </div>
+  <div class="text-center p-2">
+    <p class="m-0">Organisateur:<br><%= User.find(vice.user_id).first_name.capitalize %> <%= User.find(vice.user_id).last_name.capitalize %></p>
+    <p class="m-0">Cours dispos :</p>
+    <p class="m-0"><%= vice.starting_date %> - <%= vice.ending_date %></p>
+  </div>
+</div>
+
+

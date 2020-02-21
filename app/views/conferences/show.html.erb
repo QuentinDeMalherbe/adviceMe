@@ -6,12 +6,12 @@
       <h2><%= @conference.vice.category %></h2>
       <h1 class="w-50"><%= @conference.vice.name %></h1>
     </div>
-    <% if @conference.vice.category == 'Déviance sexuelle' %>
-      <img class ='imgRand' src="https://images.unsplash.com/photo-1531171421955-98c62fcd562f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=649&q=80")">
+    <% if @conference.vice.category == 'politic bastards' %>
+      <img class ='imgRand' src="https://images.unsplash.com/photo-1487687244198-8fd6524022f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")">
     <% elsif @conference.vice.category.capitalize == 'Détournement de fonds publics'%>
       <img class ='imgRand' src="https://images.unsplash.com/photo-1459257831348-f0cdd359235f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60")">
     <% else %>
-      <img class ='imgRand' src="https://images.unsplash.com/photo-1487687244198-8fd6524022f5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")">
+      <img class ='imgRand' src="https://images.unsplash.com/photo-1531171421955-98c62fcd562f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=649&q=80")">
     <% end %>
   </div>
 
@@ -20,6 +20,8 @@
       <p><i class="fas fa-user"></i> Présenté par : <%= User.find(@conference.vice.user_id).first_name.capitalize %> <%= User.find(@conference.vice.user_id).last_name.capitalize %> </p>
       <p><i class="far fa-calendar-times"></i>  <%= @conference.date.strftime('%d . %m . %Y') %></p>
       <p><i class="fas fa-map-marker-alt"></i> <%= @conference.vice.address %></p>
+      <p class="d-flex justify-content-end "><%= link_to "Je ne peux finalement pas y aller", conferences_path(@conference), method: :delete, data: { confirm: "Tu es sûr(e) de pas pouvoir venir?" }, class: 'text-decoration-none text-danger', style: 'font-size:12px;' %>
+    </p>
     </div>
     <div class="d-flex justify-content-end align-items-center" style="position: relative;">
       <%= cl_image_tag(@conference.user.photo.key, class: 'avatar-xxl') %>
@@ -27,6 +29,7 @@
       <%= cl_image_tag(User.find(@conference.vice.user_id).photo.key, class: 'avatar-xxl', style: 'margin-left:-30px;') %>
     </div>
   </div>
+
 </div>
 
 <style type="text/css">
